@@ -1,0 +1,42 @@
+/* Body */
+body{
+    background-color: #fafafa;
+}
+
+/* Navigation */
+.navBar {
+    background-color: #281F58;
+    height: 90px;
+    max-height: 90px;
+    width: 100%;
+    margin: 0px;
+}
+
+.navBar li{
+    display: block;
+    text-emphasis: none;
+    text-decoration: none;
+    color: #ffffff;
+}
+.navBar li:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navBar a {
+    color: #ffffff;
+    text-decoration: none;
+}
+.navBar a:hover {
+    text-decoration: none;
+}
+
+.navBar img{
+    fill: #ffffff;
+    height: 35px;
+    width: 35px;
+}
+.navBar img:hover {
+    fill: #ffffff;
+    cursor: pointer;
+}

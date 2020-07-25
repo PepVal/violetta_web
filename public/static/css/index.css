@@ -5,36 +5,109 @@ body{
 
 /* Navigation */
 .navBar {
+    position: fixed;
     background-color: #281F58;
     height: 90px;
     max-height: 90px;
+    top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
-    margin: 0px;
+    display: flex;
 }
 
-.navBar li{
-    display: block;
-    text-emphasis: none;
-    text-decoration: none;
-    color: #ffffff;
+/* Navs */
+.items-group {/* father */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    vertical-align: baseline;
+    /* overflow-y: auto;
+    max-height: calc(100vh - 50px - 65px); */
 }
-.navBar li:hover {
+.items-group li {
+    position: relative;
+    border-bottom: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none!important;
+    vertical-align: baseline; 
+}
+.items-group li a {
+    display: flex;
+    position: relative;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff!important;
+    font-family: Roboto, sans-serif;
+    transition: opacity .25s ease-in-out,color .25s ease-in-out;
+    font-size: 16px;
+    font-weight: 400;
+    height: 100%;
+    letter-spacing: 0;
+    padding: 0px 15px;
+}
+.items-group li a:hover {
+    color: #ffffff;
+    cursor: pointer;
+    border-bottom: 3px solid #fff;
+}
+.items-group li a.active {
+    color: #ffffff;
+    cursor: pointer;
+    border-bottom: 3px solid #fff;
+}
+
+
+/* Title Nav  VIOLETTA */
+.title {
+    font-family: cursive;
+    padding: 0 32px;
+    margin: 0;
+}
+.navBar .title a {
+    color: #ffffff;
     text-decoration: none;
+}
+.navBar .title a:hover {
+    color: coral!important;
     cursor: pointer;
 }
 
-.navBar a {
+/* Input Nav */
+.navBar .input-search input{
     color: #ffffff;
-    text-decoration: none;
+    padding-left: 22px;
+    border: none;
+    width: 199px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.33);
+    border-radius: 100px;
+    outline: none;
 }
-.navBar a:hover {
-    text-decoration: none;
+.navBar .input-search input::placeholder{
+    color: #ffffff;
 }
 
+/* Icons Nav */
+.navBar .nav-icons{
+    display: flex;
+    padding: 0 24px 0 24px;
+}
 .navBar img{
     fill: #ffffff;
     height: 35px;
     width: 35px;
+    margin: 0 6px 0 6px;
 }
 .navBar img:hover {
     fill: #ffffff;

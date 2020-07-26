@@ -9,7 +9,7 @@ const Categories = () => {
     const {id} = router.query;
 
     return (
-        <Container>
+        <Container >
             <div>
                 <h1>Soy Categories {id}</h1>
             </div>

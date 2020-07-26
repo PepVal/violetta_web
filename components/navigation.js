@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Router from 'next/router'
+import Router, { useRouter } from 'next/router'
 
 class Navigation extends React.Component {
 
@@ -34,23 +34,35 @@ class Navigation extends React.Component {
         }
     }
 
-    search(e){
+    selectNav = (id) => {
+        switch (id) {
+
+        }
+    }
+
+    search(e) {
         e.preventDefault()
+        const item_search = document.getElementById('search').value
+        console.log("Busca esto: ", item_search)
+        alert('la busqueda es: ' + item_search)
     }
 
     render() {
         const { active } = this.state;
         return (
             <header className="navBar align-items-center">
-                <div></div>
-                <div>
-                    <h2 className="title">
+                <div className="toogle-icon">
+                    <img src="/toogle_button.svg" alt="Menu" />
+                </div>
+
+                <div className="title">
+                    <h2 >
                         <Link href="/">
                             <a>Violetta</a>
                         </Link>
                     </h2>
                 </div>
-                <ul className="items-group">
+                <ul className="items-group justify-content-center">
                     <li onClick={(e) => this.handleNav(0)}>
                         <a className={active == 0 ? "active" : ""}>HOMBRE</a>
                     </li>
@@ -66,16 +78,23 @@ class Navigation extends React.Component {
                 </ul>
                 <div className="input-search">
                     <form onSubmit={(e) => this.search(e)}>
-                        <input placeholder="Buscar" />
+                        <input id="search" placeholder="Buscar" />
                     </form>
                 </div>
                 <div className="nav-icons">
-                    <Link href="/cart">
-                        <img src="/cart.svg" alt="Carrito" />
-                    </Link>
-                    <Link href="/login">
-                        <img src="/user.svg" alt="Perfil" />
-                    </Link>
+                    <div className="search-icon">
+                        <img src="/buscar.svg" alt="Buscar" />
+                    </div>
+                    <div className="cart-icon">
+                        <Link href="/cart">
+                            <img src="/cart.svg" alt="Carrito" />
+                        </Link>
+                    </div>
+                    <div className="login-icon">
+                        <Link href="/login">
+                            <img src="/user.svg" alt="Perfil" />
+                        </Link>
+                    </div>
                 </div>
             </header>
         )

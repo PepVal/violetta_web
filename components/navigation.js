@@ -1,43 +1,35 @@
 import Link from 'next/link'
 import Router, { useRouter } from 'next/router'
 
+import ProfileOptions from './profileOptions'
+
 class Navigation extends React.Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            active: -1,
+            logged: true,
+            category: null
         }
     }
 
-    handleNav = (op) => {
-        console.log(op)
-        switch (op) {
-            case 0:
-                Router.push('/categories/[id]', '/categories/hombre')
-                this.setState({ active: 0 })
-                break;
-            case 1:
-                Router.push('/categories/[id]', '/categories/mujer')
-                this.setState({ active: 1 })
-                break;
-            case 2:
-                Router.push('/categories/[id]', '/categories/niños')
-                this.setState({ active: 2 })
-                break;
-            case 3:
-                Router.push('/categories/[id]', '/categories/accesorios')
-                this.setState({ active: 3 })
-                break;
-            default:
-                this.setState({ active: -1 })
-        }
+    componentDidMount() {
+        this.setState({ category: this.props.category })
+        // if(this.props.id != undefined){
+        //     this.setState({category: this.props.id})
+        // }
+    }
+
+    handleNav = (cat) => {
+        this.setState({ category: cat })
+        // Router.push('/categories/[id]', `/categories/${category}`)
+
+        // console.log("ACTIVEEEE ", this.state.active)
+        this.selectNav(cat)
     }
 
     selectNav = (id) => {
-        switch (id) {
-
-        }
+        Router.push('/categories/[id]', `/categories/${id}`)
     }
 
     search(e) {
@@ -45,6 +37,7 @@ class Navigation extends React.Component {
         const item_search = document.getElementById('search').value
         console.log("Busca esto: ", item_search)
         alert('la busqueda es: ' + item_search)
+        Router.push('/search/[sid]', `/search/${item_search}`)
     }
 
     render() {
@@ -56,24 +49,24 @@ class Navigation extends React.Component {
                 </div>
 
                 <div className="title">
-                    <h2 >
+                    <h2>
                         <Link href="/">
                             <a>Violetta</a>
                         </Link>
                     </h2>
                 </div>
                 <ul className="items-group justify-content-center">
-                    <li onClick={(e) => this.handleNav(0)}>
-                        <a className={active == 0 ? "active" : ""}>HOMBRE</a>
+                    <li onClick={() => this.handleNav("hombre")}>
+                        <a className={"" + (this.state.category === "hombre" ? 'active' : '')}>HOMBRE</a>
                     </li>
-                    <li onClick={(e) => this.handleNav(1)}>
-                        <a className={active == 1 ? "active" : ""}>MUJER</a>
+                    <li onClick={() => this.handleNav("mujer")}>
+                        <a className={(this.state.category === "mujer" ? 'active' : '')}>MUJER</a>
                     </li>
-                    <li onClick={(e) => this.handleNav(2)}>
-                        <a className={active == 2 ? "active" : ""}>NIÑOS</a>
+                    <li onClick={() => this.handleNav("niños")}>
+                        <a className={(this.state.category === "niños" ? 'active' : '')}>NIÑOS</a>
                     </li>
-                    <li onClick={(e) => this.handleNav(3)}>
-                        <a className={active == 3 ? "active" : ""}>ACCESORIOS</a>
+                    <li onClick={() => this.handleNav("accesorios")}>
+                        <a className={(this.state.category === "accesorios" ? 'active' : '')}>ACCESORIOS</a>
                     </li>
                 </ul>
                 <div className="input-search">
@@ -90,10 +83,14 @@ class Navigation extends React.Component {
                             <img src="/cart.svg" alt="Carrito" />
                         </Link>
                     </div>
+
                     <div className="login-icon">
-                        <Link href="/login">
-                            <img src="/user.svg" alt="Perfil" />
-                        </Link>
+                        { this.state.logged
+                        ?   <ProfileOptions/>
+                        :   <Link href="/login">
+                                <img src="/user.svg" alt="Perfil" />
+                            </Link>
+                        }
                     </div>
                 </div>
             </header>

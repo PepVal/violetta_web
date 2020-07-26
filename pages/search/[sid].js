@@ -3,17 +3,17 @@ import { useRouter } from 'next/router'
 
 import Container from '../../components/Container'
 
-const Categories = () => {
+const Search = () => {
     const router = useRouter();
-    const {id} = router.query;
+    const { sid } = router.query;
 
     return (
-        <Container category={id}>
+        <Container >
             <div>
-                <h1>Soy Categories {id}</h1>
+                <h1>Soy Search {sid}</h1>
             </div>
         </Container>
     )
 }
 
-export default Categories
+export default Search

@@ -8,13 +8,11 @@ const Index = () => {
     return (
         <Container>
             <Carousel />
-
             <div>
-                <Category gender={0}/>
-                <Category gender={1}/>
+                <Category gender={0} />
+                <Category gender={1} />
             </div>
-
-            <Footer/>
+            <Footer />
         </Container>
     )
 

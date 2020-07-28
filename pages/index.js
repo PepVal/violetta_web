@@ -1,4 +1,6 @@
 import React from 'react'
+
+// Components
 import Container from '../components/Container'
 import Carousel from '../components/index/carousel'
 import Category from '../components/index/category'

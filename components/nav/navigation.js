@@ -2,13 +2,14 @@ import Link from 'next/link'
 import Router, { useRouter } from 'next/router'
 
 import ProfileOptions from './profileOptions'
+import SlideBar from './slideBar'
 
 class Navigation extends React.Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            logged: true,
+            logged: false,
             category: null
         }
     }
@@ -40,12 +41,16 @@ class Navigation extends React.Component {
         Router.push('/search/[sid]', `/search/${item_search}`)
     }
 
+    handleOpenSlide(){
+
+    }
+
     render() {
-        const { active } = this.state;
         return (
             <header className="navBar align-items-center">
                 <div className="toogle-icon">
-                    <img src="/toogle_button.svg" alt="Menu" />
+                    {/* <img onClick={() => this.handleOpenSlide()} src="/toogle_button.svg" alt="Menu" /> */}
+                    <SlideBar />
                 </div>
 
                 <div className="title">

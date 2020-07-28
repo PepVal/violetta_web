@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-import Navigation from './navigation'
+import Navigation from './nav/navigation'
 
 const Container = (props) => {
     return (

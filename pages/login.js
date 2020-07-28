@@ -112,7 +112,7 @@ class Login extends React.Component {
                                 laboriosam ad deleniti.
                             </p>
                             <button className="btn transparent" onClick={(e) => this.handleSignIn(e)} id="sign-in-btn">
-                                Inicia Sesión
+                                Iniciar Sesión
                             </button>
                         </div>
                         <img src="register.svg" className="image" alt="" />

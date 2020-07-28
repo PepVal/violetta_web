@@ -260,13 +260,13 @@ body{
     }
     /* modificando la altura */
     .navBar {
-        height: 60px;
-        max-height: 60px;
+        height: 50px;
+        max-height: 50px;
         justify-content: space-between;
     }
     /* espaciado */
     .space-body {
-        margin-top: 59px;
+        margin-top: 49px;
     }
     /* quitando el input */
     .navBar .input-search input {

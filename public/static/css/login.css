@@ -6,12 +6,8 @@
   box-sizing: border-box;
 }
 
-body,
-input {
-  font-family: "Poppins", sans-serif;
-}
-
 .container-login {
+  font-family: "Poppins", sans-serif;/*provicional*/
   position: relative;
   width: 100%;
   background-color: #fff;

@@ -41,7 +41,7 @@ class Navigation extends React.Component {
         Router.push('/search/[sid]', `/search/${item_search}`)
     }
 
-    handleOpenSlide(){
+    handleOpenSlide() {
 
     }
 
@@ -60,28 +60,30 @@ class Navigation extends React.Component {
                         </Link>
                     </h2>
                 </div>
-                <ul className="items-group justify-content-center">
+                <ul className="items-group justify-content-center" role="navigation">
                     <li onClick={() => this.handleNav("hombre")}>
                         <a className={"" + (this.state.category === "hombre" ? 'active' : '')}>HOMBRE</a>
                     </li>
-                    <li onClick={() => this.handleNav("mujer")}>
+                    <li onClick={() => this.handleNav("mujer")} >
                         <a className={(this.state.category === "mujer" ? 'active' : '')}>MUJER</a>
                     </li>
-                    <li onClick={() => this.handleNav("niños")}>
+                    <li onClick={() => this.handleNav("niños")} >
                         <a className={(this.state.category === "niños" ? 'active' : '')}>NIÑOS</a>
                     </li>
-                    <li onClick={() => this.handleNav("accesorios")}>
+                    <li onClick={() => this.handleNav("accesorios")} >
                         <a className={(this.state.category === "accesorios" ? 'active' : '')}>ACCESORIOS</a>
                     </li>
                 </ul>
                 <div className="input-search">
                     <form onSubmit={(e) => this.search(e)}>
-                        <input id="search" placeholder="Buscar" />
+                        <input id="search" placeholder="Buscar" aria-label="Buscar prenda" />
                     </form>
                 </div>
                 <div className="nav-icons">
                     <div className="search-icon">
-                        <img src="/buscar.svg" alt="Buscar" />
+                        <img type="button" data-toggle="collapse" data-target="#searchCollapse"
+                            aria-expanded="false" aria-controls="searchCollapse"
+                            src="/buscar.svg" alt="Buscar" />
                     </div>
                     <div className="cart-icon">
                         <Link href="/cart">
@@ -90,12 +92,19 @@ class Navigation extends React.Component {
                     </div>
 
                     <div className="login-icon">
-                        { this.state.logged
-                        ?   <ProfileOptions/>
-                        :   <Link href="/login">
+                        {this.state.logged
+                        ?   <ProfileOptions />
+                        :   <Link type="button" href="/login">
                                 <img src="/user.svg" alt="Perfil" />
                             </Link>
                         }
+                    </div>
+                </div>
+                <div className="collapse" id="searchCollapse" style={{ position: "absolute", top: "50px", left: "0px", right: "0px", zIndex: 2000 }}>
+                    <div className="card card-body">
+                        <form onSubmit={(e) => this.search(e)}>
+                            <input id="search" placeholder="Buscar en nuestra tienda" aria-label="Buscar prenda" />
+                        </form>
                     </div>
                 </div>
             </header>

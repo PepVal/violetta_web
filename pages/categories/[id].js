@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-
+import ProductC from '../../components/categories/categories'
 import Container from '../../components/Container'
+import Footer from '../../components/footer'
 
 const Categories = () => {
     const router = useRouter();
@@ -11,6 +12,8 @@ const Categories = () => {
         <Container category={id}>
             <div>
                 <h1>Soy Categories {id}</h1>
+                <ProductC/>
+                <Footer/>
             </div>
         </Container>
     )

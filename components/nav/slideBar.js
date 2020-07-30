@@ -79,13 +79,12 @@ class SlideBar extends React.Component {
         <p onClick={(e) => this.handleNav("niños")} id="niños" className="menu-item" >NIÑOS</p>
         <p onClick={(e) => this.handleNav("accesorios")} id="accesorios" className="menu-item" >ACCESORIOS</p>
 
-        <Link type="button" id="login" className="menu-item" href="/login">
-          <a>Iniciar Sesión</a> 
+        <Link href="/login">
+          <a type="button" id="login" className="menu-item" >Iniciar Sesión</a> 
         </Link>
       </Menu >
     )
   }
-
 }
 
 export default SlideBar

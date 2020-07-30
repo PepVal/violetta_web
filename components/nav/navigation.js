@@ -41,6 +41,14 @@ class Navigation extends React.Component {
         Router.push('/search/[sid]', `/search/${item_search}`)
     }
 
+    searchCollapse(e){
+        e.preventDefault()
+        const item_search = document.getElementById('iSearchCollapse').value
+        console.log("Busca esto: ", item_search)
+        alert('la busqueda es: ' + item_search)
+        Router.push('/search/[sid]', `/search/${item_search}`)
+    }
+
     handleOpenSlide() {
 
     }
@@ -102,8 +110,8 @@ class Navigation extends React.Component {
                 </div>
                 <div className="collapse" id="searchCollapse" style={{ position: "absolute", top: "50px", left: "0px", right: "0px", zIndex: 2000 }}>
                     <div className="card card-body">
-                        <form onSubmit={(e) => this.search(e)}>
-                            <input id="search" placeholder="Buscar en nuestra tienda" aria-label="Buscar prenda" />
+                        <form onSubmit={(e) => this.searchCollapse(e)}>
+                            <input id="iSearchCollapse" placeholder="Buscar en nuestra tienda" aria-label="Buscar prenda" />
                         </form>
                     </div>
                 </div>

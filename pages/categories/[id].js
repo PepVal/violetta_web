@@ -11,7 +11,21 @@ const Categories = () => {
     return (
         <Container category={id}>
             <div>
-                <h1>Soy Categories {id}</h1>
+                {/*<h1>Soy Categories {id}</h1>*/}
+                <p>Espacio para el Filtro</p>
+                <p>. </p>
+                <p>.. </p>
+                <ProductC/>
+                <ProductC/>
+                <ProductC/>
+                <ProductC/>
+                <ProductC/>
+                <ProductC/>
+                <ProductC/>
+                <ProductC/>
+                <ProductC/>
+                <ProductC/>
+                <ProductC/>
                 <ProductC/>
                 <Footer/>
             </div>

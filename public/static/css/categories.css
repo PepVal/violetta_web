@@ -1,0 +1,64 @@
+/*Los cuadrados de los colores debajo de la imagen*/
+.cuadradoce {
+    width: 25px; 
+    height: 25px; 
+    background: #428bca;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.cuadradoam {
+    width: 25px; 
+    height: 25px; 
+    background: #fcba03;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.cuadradove{
+    width: 25px; 
+    height: 25px; 
+    background: #39fc03;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.cuadradoro{
+    width: 25px; 
+    height: 25px; 
+    background: #fc0303;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+/*Los estilos de las tarjetas */
+.card-product {
+    width: 313px;
+    height: 500px;
+    background: #ffffff;
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    margin: 12px 12px;
+    display: inline-block;
+}
+
+
+/*Los estilos de las tarjetas de las imagenes */
+.card-product img {
+    width: 100%;
+    height: 405px;
+    object-fit: cover;
+    border-radius: 15px 15px 0px 0px;
+    background: violet;
+    transform: scale(0.7);
+}
+.card-product img:hover {
+   cursor: pointer;
+   transform: scale(1);
+}
+/*Los estilos de la letra de la tajeta*/
+.card-product .name-product p {
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    color: #000000;
+    padding-top: 12px;
+    margin: 0;
+    text-align: center;
+}

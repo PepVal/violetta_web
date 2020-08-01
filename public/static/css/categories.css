@@ -62,3 +62,32 @@
     margin: 0;
     text-align: center;
 }
+
+/*El estilo del componete filter*/
+.filter{
+    margin-top: 1px;
+    padding-top: 1px;
+    margin-left: 1px;
+    margin-right: 1px;
+    /*width: auto;
+    /*height: auto;*/
+    background-color: #F9EFEF;
+}
+
+.filter p{
+    color : #000000;
+    margin: 0px;
+    padding: 5px;
+    
+}
+.filter .colapsso{
+    padding: 15px;
+    margin-left: 10px;
+}
+
+.filter svg {
+    padding: 3px;
+    height: 38px;
+    width: 38px;
+    fill: #000000;
+}

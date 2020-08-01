@@ -1,4 +1,7 @@
 /*Los cuadrados de los colores debajo de la imagen*/
+.color-product{
+    margin-top: 16px;
+}
 .cuadradoce {
     width: 25px; 
     height: 25px; 
@@ -28,14 +31,18 @@
     margin-left: 10px;
     margin-right: 10px;
 }
+
 /*Los estilos de las tarjetas */
 .card-product {
-    width: 313px;
-    height: 500px;
+    width: 276px;
+    height: 491px;
     background: #ffffff;
     box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
-    margin: 12px 12px;
+    /*margin: 12px 12px;*/
+    margin-top: 20px;
+    margin-left: 12px;
+    margin-right: 12px;
     display: inline-block;
 }
 
@@ -43,20 +50,22 @@
 /*Los estilos de las tarjetas de las imagenes */
 .card-product img {
     width: 100%;
-    height: 405px;
+    height: 360px;
     object-fit: cover;
     border-radius: 15px 15px 0px 0px;
     background: violet;
-    transform: scale(0.7);
+    transform: scale(1);
+    transition: transform 1.10s;
 }
 .card-product img:hover {
    cursor: pointer;
-   transform: scale(1);
+   transform: scale(1.33);
+  
 }
 /*Los estilos de la letra de la tajeta*/
 .card-product .name-product p {
     font-family: Roboto, sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     color: #000000;
     padding-top: 12px;
     margin: 0;
@@ -75,9 +84,10 @@
 }
 
 .filter p{
-    color : #000000;
+    color : #9B51E0;
     margin: 0px;
     padding: 5px;
+    cursor:pointer;
     
 }
 .filter .colapsso{
@@ -89,5 +99,76 @@
     padding: 3px;
     height: 38px;
     width: 38px;
-    fill: #000000;
+    fill: #9B51E0;
+    cursor:pointer;
+}
+
+/* imput de las opcion de las categorias */
+.input-group-text {
+    text-align: center;
+    border-radius: 10;
+    background: #F9EFEF;
+    padding: auto;
+    border: none;
+    /*font-weight: bold;*/
+    color: #000000;
+}
+.custom-select {
+    background: #F9EFEF;
+    border: none;
+    background: #F9EFEF url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .75rem center;
+    background-size: auto;
+    background-size: 8px 10px;
+    color: #000000;
+    appearance: none;
+    /*font-weight: 700;*/
+}
+
+/*Intento de responsive*/
+.product-container ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    -ms-align-items: flex-start;
+    align-items: flex-start;
+    margin-right: 0px;
+}
+.custom-row{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+}
+@media (max-width: 960px){
+    .card-product {
+        width: 160px;
+        height: 400px;
+    }
+    .card-product img {
+        height: 310px;
+    }
+    .cuadradoce {
+        width: 18px; 
+        height: 18px; 
+    }
+    .cuadradoam {
+        width: 18px; 
+        height: 18px; 
+    }
+    .cuadradove{
+        width: 18px; 
+        height: 18px; 
+    }
+    .cuadradoro{
+        width: 18px; 
+        height: 18px; 
+    }
+    .card-product .name-product p {
+        font-size: 12px;
+        color: #000000;
+        padding-top: 5px;
+    }
+    
 }

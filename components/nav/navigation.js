@@ -19,6 +19,15 @@ class Navigation extends React.Component {
         // if(this.props.id != undefined){
         //     this.setState({category: this.props.id})
         // }
+        this.isLogin()
+    }
+
+    isLogin(){
+        const data = JSON.parse(localStorage.getItem('account'))
+        console.log("data nav ",data)
+        if(data !== null && data.isLogin){
+            this.setState({logged: data.isLogin})
+        }
     }
 
     handleNav = (cat) => {
@@ -36,16 +45,12 @@ class Navigation extends React.Component {
     search(e) {
         e.preventDefault()
         const item_search = document.getElementById('search').value
-        console.log("Busca esto: ", item_search)
-        alert('la busqueda es: ' + item_search)
         Router.push('/search/[sid]', `/search/${item_search}`)
     }
 
     searchCollapse(e){
         e.preventDefault()
         const item_search = document.getElementById('iSearchCollapse').value
-        console.log("Busca esto: ", item_search)
-        alert('la busqueda es: ' + item_search)
         Router.push('/search/[sid]', `/search/${item_search}`)
     }
 
@@ -102,16 +107,17 @@ class Navigation extends React.Component {
                     <div className="login-icon">
                         {this.state.logged
                         ?   <ProfileOptions />
-                        :   <Link type="button" href="/login">
+                        :   <Link href="/login">
                                 <img src="/user.svg" alt="Perfil" />
                             </Link>
                         }
                     </div>
                 </div>
-                <div className="collapse" id="searchCollapse" style={{ position: "absolute", top: "50px", left: "0px", right: "0px", zIndex: 2000 }}>
-                    <div className="card card-body">
+                <div className="collapse style-collapse" id="searchCollapse">
+                    <div className="body-collapse">
                         <form onSubmit={(e) => this.searchCollapse(e)}>
                             <input id="iSearchCollapse" placeholder="Buscar en nuestra tienda" aria-label="Buscar prenda" />
+                            <button className="btn" type="submit">Buscar</button>
                         </form>
                     </div>
                 </div>

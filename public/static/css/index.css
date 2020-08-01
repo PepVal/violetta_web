@@ -1,5 +1,6 @@
 @import url("login.css");
 @import url("categories.css");
+@import url("search.css");
 
 /* Body */
 body{
@@ -19,9 +20,10 @@ body{
     display: flex;
     z-index: 1000;
     /* Sobra de una pagina que vi y me gusto xD */
-    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 
+    /* Ya no me gusto :´v */
+    /* box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 
     0px 4px 5px 0px rgba(0,0,0,0.14), 
-    0px 1px 10px 0px rgba(0,0,0,0.12);
+    0px 1px 10px 0px rgba(0,0,0,0.12); */
 }
 
 /* Navs */
@@ -145,6 +147,57 @@ body{
 /* margin top body */
 .space-body {
     margin-top: 89px;
+}
+
+.style-collapse {
+    position: absolute;
+    top: 50px; 
+    left: 0px; 
+    right: 0px; 
+    z-index: 1000;
+}
+.body-collapse {
+    position: relative;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 15px;
+}
+.body-collapse form {
+    display: flex;
+    height: 50px;
+    align-items: center;
+}
+.body-collapse input{
+    width: 100%;
+    height: 34px;
+}
+
+.body-collapse .btn {
+    width: 85px;
+    background-color: #514597;
+    border: none;
+    outline: none;
+    height: 35px;
+    border-radius: 49px;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.body-collapse .btn:hover {
+    background-color: #281F58;
 }
 
 
@@ -277,8 +330,14 @@ body{
     font-size: 12px;
 }
 
-
 /* BREAKPOINT FOR RESPONSIVE */
+/* Arreglo bug del collapse buscar */
+@media (min-width: 960px){
+    .body-collapse {
+        display: none;
+    }
+}
+
 @media (max-width: 960px) {
     /* arreglando la navigation */
     /* quitando las categorias */

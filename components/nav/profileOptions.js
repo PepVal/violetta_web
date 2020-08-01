@@ -5,17 +5,29 @@ import Router, { useRouter } from 'next/router'
 
 const ProfileOptions = (props) => {
 
+    const logout = () => {
+        const data = JSON.parse(localStorage.getItem('account'))
+        data.isLogin = false;
+
+
+        const user = JSON.stringify(data)
+
+        console.log(user)
+        
+        localStorage.setItem('account', user)
+    }
+
     return (
         <div className="dropdown">
             <img type="button" id="dropdownMenuButton"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg" alt="Profile" />
+                src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg" alt="Imagen de perfil" />
 
             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a className="dropdown-item" href="#">Historial</a>
                 <a className="dropdown-item" href="#">Another action</a>
                 <div className="dropdown-divider" />
-                <a className="dropdown-item" href="#">Cerrar sesión</a>
+                <a onClick={logout} className="dropdown-item" href="/">Cerrar sesión</a>
             </div>
         </div>
     )

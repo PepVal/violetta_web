@@ -72,7 +72,7 @@ class SlideBar extends React.Component {
 
   render() {
     return (
-      <Menu customBurgerIcon={<img src="toogle_button.svg" />} styles={styles} onClose={this.state.isOpen}>
+      <Menu customBurgerIcon={<img src="toogle_button.svg" />} styles={styles} /*onClose={this.state.isOpen}*/>
         <h2>Tienda</h2>
         <p onClick={(e) => this.handleNav("hombre")} id="hombre" className="menu-item" >HOMBRE</p>
         <p onClick={(e) => this.handleNav("mujer")} id="mujer" className="menu-item" >MUJER</p>
@@ -80,7 +80,7 @@ class SlideBar extends React.Component {
         <p onClick={(e) => this.handleNav("accesorios")} id="accesorios" className="menu-item" >ACCESORIOS</p>
 
         <Link href="/login">
-          <a type="button" id="login" className="menu-item" >Iniciar Sesión</a> 
+          <a type="button" className="menu-item" >Iniciar Sesión</a> 
         </Link>
       </Menu >
     )

@@ -17,7 +17,6 @@ const Index = () => {
             <Footer />
         </Container>
     )
-
 }
 
 export default Index

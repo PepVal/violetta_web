@@ -4,6 +4,14 @@ import Router from "next/router"
 
 class Login extends React.Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            invalidEmailL: false,
+            invalidPwdL: false,
+        }
+    }
+
     handleSignUp = (e) => {
         let btnSignUp = document.querySelector(".container-login")
         btnSignUp.classList.add("sign-up-mode");
@@ -14,22 +22,112 @@ class Login extends React.Component {
         btnSignIn.classList.remove("sign-up-mode");
     }
 
+    change(event) {
+        if (event.target != undefined) {
+            let element = document.getElementById(event.target.id + "L");
+            if (event.target.value != "") {
+                element.classList.add("arriba");
+            } else {
+                element.classList.remove("arriba");
+                element.classList.remove("invalid");
+            }
+        }
+    }
+
+    validateLogin = (email, pwd) => {
+        if (email === "") {
+            this.setState({ invalidEmailL: true })
+        }
+
+
+        console.log("Email ", email)
+        console.log("pwd ", pwd)
+        return true;
+    }
+
     login = (e) => {
         e.preventDefault();
+        const email = document.getElementById("emailLogin").value;
+        const pwd = document.getElementById("pwdLogin").value;
+
+        if (this.validateLogin(email, pwd)) {
+
+            //simulacion de backend todo pro xD
+            if (this.isUser(email, pwd)) {
+                Router.push("/index")
+            } else {
+                alert("Tu usuario o contraseña estan mal escritos, revisalos")
+            }
+        }
+
+    }
+
+    isUser = (email, pwd) => {
+        //const data = localStorage.getItem('account') || ''
+        const data = JSON.parse(localStorage.getItem('account'))
+        if(data !== null){
+            if ((email === data.email) && (pwd === data.pwd)) {
+                
+                data.isLogin = true;
+                const user = JSON.stringify(data)
+                console.log(user)
+    
+                localStorage.setItem('account', user)
+    
+                return true
+            } else {
+                return false
+            }
+        }
+        return false
+    }
+
+    register = (e) => {
+        e.preventDefault();
+        const aprove = document.getElementById("policy").checked
+
+        const firstName = document.getElementById("name").value;
+        const lastName = document.getElementById("lastName").value;
         const email = document.getElementById("email").value;
-        const pwd = document.getElementById("pwd").value;
+        const pwd = document.getElementById("pwdRegister").value;
 
-        console.log("Email " ,email)
-        console.log("pwd " ,pwd)
+        const role = "user"
+        const isLogin = true
 
-        //login
-        Router.push("/index")
+        let obj = { firstName, lastName, email, pwd, role, isLogin }
+
+        if (aprove) {
+            if (this.validateRegister(obj)) {
+
+                const user = JSON.stringify(obj)
+
+                console.log("USER ", user)
+
+                //simulacion de creacion de usuario
+                this.createAccount(user)
+            } else {
+                alert("Hay campos errados")
+            }
+        } else {
+            alert("Debe aceptar las politicas de privacidad y los terminos y condiciones para registrarse")
+        }
+    }
+
+    validateRegister = (user) => {
+        return false
+    }
+
+    createAccount = (user) => {
+        localStorage.setItem('account', user)
+
+        Router.push("/")
     }
 
     render() {
+        const { invalidEmailL } = this.state
         return (<>
             <Head>
-                <title>Login</title>
+                <title>Iniciar Sesion | Registrarse</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <script
                     src="https://kit.fontawesome.com/64d58efce2.js"
@@ -40,16 +138,28 @@ class Login extends React.Component {
             <div className="container-login">
                 <div className="forms-container">
                     <div className="signin-signup">
-                        <form onSubmit={this.login} action="#" className="sign-in-form">
+                        <form onSubmit={this.login} className="sign-in-form">
                             <h2 className="title-login">Iniciar Sesión</h2>
                             <div className="input-field">
-                                <i className="fas fa-user"></i>
-                                <input id="email" type="text" placeholder="Correo electrónico" aria-label="Correo electrónico" />
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
+                                </svg>
+                                <div className="group">
+                                    <label className={invalidEmailL ? "invalid" : ""} id="emailLoginL">Correo electrónico</label>
+                                    <input onChange={this.change} type="email" id="emailLogin" aria-label="Correo electrónico" />
+                                </div>
                             </div>
+
                             <div className="input-field">
-                                <i className="fas fa-lock"></i>
-                                <input id="pwd" type="password" placeholder="Contraseña" aria-label="Contraseña" />
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12,17A2,2 0 0,0 14,15C14,13.89 13.1,13 12,13A2,2 0 0,0 10,15A2,2 0 0,0 12,17M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V10C4,8.89 4.9,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z" />
+                                </svg>
+                                <div className="group">
+                                    <label id="pwdLoginL">Contraseña</label>
+                                    <input onChange={this.change} type="password" id="pwdLogin" aria-label="Contraseña" />
+                                </div>
                             </div>
+
                             <input type="submit" value="Iniciar Sesión" className="btn solid" />
                             <Link href="/">
                                 <a>Volver a la tienda</a>
@@ -74,25 +184,67 @@ class Login extends React.Component {
                             </div>
                         </form>
 
-                        <form action="#" className="sign-up-form">
+                        <form onSubmit={this.register} className="sign-up-form">
                             <h2 className="title-login">Registrate</h2>
+
                             <div className="input-field">
-                                <i className="fas fa-user"></i>
-                                <input type="text" placeholder="Username" />
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
+                                </svg>
+                                <div className="group">
+                                    <label id="nameL">Nombres</label>
+                                    <input onChange={this.change} type="text" id="name" aria-label="Nombres" />
+                                </div>
                             </div>
+
                             <div className="input-field">
-                                <i className="fas fa-envelope"></i>
-                                <input type="email" placeholder="Email" />
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
+                                </svg>
+                                <div className="group">
+                                    <label id="lastNameL">Apellidos</label>
+                                    <input onChange={this.change} type="text" id="lastName" aria-label="Apellidos" />
+                                </div>
                             </div>
+
                             <div className="input-field">
-                                <i className="fas fa-lock"></i>
-                                <input type="password" placeholder="Password" />
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
+                                </svg>
+                                <div className="group">
+                                    <label id="emailL">Correo electrónico</label>
+                                    <input onChange={this.change} type="email" id="email" aria-label="Correo electrónico" />
+                                </div>
                             </div>
+
+                            <div className="input-field">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12,17A2,2 0 0,0 14,15C14,13.89 13.1,13 12,13A2,2 0 0,0 10,15A2,2 0 0,0 12,17M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V10C4,8.89 4.9,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z" />
+                                </svg>
+                                <div className="group">
+                                    <label id="pwdRegisterL">Contraseña</label>
+                                    <input onChange={this.change} type="password" id="pwdRegister" aria-label="Contraseña" />
+                                </div>
+                            </div>
+
+                            <div className="checkbox-field">
+                                <label>
+                                    <input id="ads" type="checkbox" aria-label="Aceptas recibir correos electrónicos de nuestras ofertas" />
+                                    <span>Recibir correos electrónicos de ofertas.</span>
+                                </label>
+                            </div>
+                            <div className="checkbox-field">
+                                <label>
+                                    <input id="policy" type="checkbox" aria-label="Acepto la politica de privacidad y los terminos y condiciones" />
+                                    <span>Acepto la politica de privacidad y los terminos y condiciones.*</span>
+                                </label>
+                            </div>
+
                             <input type="submit" className="btn" value="Crear Cuenta" />
                             <Link href="/">
                                 <a>Volver a la tienda</a>
                             </Link>
-                            <p className="social-text">Síguenos en nuestras redes sociales</p>
+                            {/* <p className="social-text">Síguenos en nuestras redes sociales</p>
                             <div className="social-media">
                                 <a className="social-icon" href="http://www.google.org/" target="_blank" role="button">
                                     <svg viewBox="0 0 24 24">
@@ -109,7 +261,7 @@ class Login extends React.Component {
                                         <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
                                     </svg>
                                 </a>
-                            </div>
+                            </div> */}
                         </form>
                     </div>
                 </div>
@@ -119,28 +271,27 @@ class Login extends React.Component {
                         <div className="content">
                             <h3>¿Nuevo aqui?</h3>
                             <p>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-                                ex ratione. Aliquid!
+                                Regístrate en nuestra página para poder realizar pedidos de nuestra
+                                fantástica ropa.
                             </p>
                             <button className="btn transparent" onClick={(e) => this.handleSignUp(e)} id="sign-up-btn">
                                 Crear cuenta
                             </button>
                         </div>
-                        <img src="log.svg" className="image" alt="" />
+                        <img src="log.svg" className="image" alt="Imagen login" />
                     </div>
 
                     <div className="panel right-panel">
                         <div className="content">
                             <h3>¿Tienes cuenta?</h3>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-                                laboriosam ad deleniti.
+                                Inicia sesión ahora en nuestra página y compra la ropa que siempre deseaste lucir.
                             </p>
                             <button className="btn transparent" onClick={(e) => this.handleSignIn(e)} id="sign-in-btn">
                                 Iniciar Sesión
                             </button>
                         </div>
-                        <img src="register.svg" className="image" alt="" />
+                        <img src="register.svg" className="image" alt="Imagen registro" />
                     </div>
                 </div>
             </div>

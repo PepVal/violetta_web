@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import ProductC from '../../components/categories/categories'
+import ProductC from '../../components/categories/cardproduct'
 import Container from '../../components/Container'
 import Footer from '../../components/footer'
 import FilterC from '../../components/categories/filter'
@@ -11,21 +11,23 @@ const Categories = () => {
 
     return (
         <Container category={id}>
-            <div>
+            <div className="product-container">
                 {/*<h1>Soy Categories {id}</h1>*/}
-                <FilterC></FilterC>
-                <ProductC/>
-                <ProductC/>
-                <ProductC/>
-                <ProductC/>
-                <ProductC/>
-                <ProductC/>
-                <ProductC/>
-                <ProductC/>
-                <ProductC/>
-                <ProductC/>
-                <ProductC/>
-                <ProductC/>
+                <FilterC />
+                <ul className="custom-row justify-content-center">
+                    <ProductC/>
+                    <ProductC/>
+                    <ProductC/>
+                    <ProductC/>
+                    <ProductC/>
+                    <ProductC/>
+                    <ProductC/>
+                    <ProductC/>
+                    <ProductC/>
+                    <ProductC/>
+                    <ProductC/>
+                    <ProductC/>
+                </ul>
                 <Footer/>
             </div>
         </Container>

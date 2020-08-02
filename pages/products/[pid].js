@@ -3,6 +3,9 @@ import { useRouter } from 'next/router'
 
 import Container from '../../components/Container'
 import Footer from '../../components/footer'
+import CarouselProduct from '../../components/products/carouselProduct'
+import Description from '../../components/products/description'
+import RelatedProducts from '../../components/products/relatedProducts'
 
 const Products = () => {
     const router = useRouter();
@@ -11,16 +14,14 @@ const Products = () => {
     return (
         <Container >
             <Head>
-                <title>Producto</title>
+                <title> {pid}</title>
             </Head>
+            <div className="product">
+                <CarouselProduct />
+                <Description />
+            </div>
             <div>
-                <div>
-                    <img src="log.svg" alt="" />
-                </div>
-                <div>
-                    datos
-                </div>
-
+                <RelatedProducts/>
             </div>
             <Footer />
         </Container>

@@ -114,7 +114,7 @@ class Login extends React.Component {
     }
 
     validateRegister = (user) => {
-        return false
+        return true
     }
 
     createAccount = (user) => {

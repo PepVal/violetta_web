@@ -18,7 +18,7 @@ const Search = () => {
                 <h1>Buscar</h1>
                 <div className="line" />
             </div>
-            {sid === "pizza"
+            { sid === "pizza"
             ?   <NotFound searchTerm={sid} />
             :   <div>Soy una lista</div>
             }

@@ -3,35 +3,29 @@
     margin-top: 16px;
 }
 .cuadradoce {
-    width: 25px; 
-    height: 25px; 
     background: #428bca;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 .cuadradoam {
-    width: 25px; 
-    height: 25px; 
     background: #fcba03;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 .cuadradove{
-    width: 25px; 
-    height: 25px; 
     background: #39fc03;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 
 .cuadradoro{
-    width: 25px; 
-    height: 25px; 
     background: #fc0303;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 
+.cuadradomo{
+    background: #d1139e;
+}
+.cuadradogri{
+    background: #a9c2bb;
+}
+
+.cuadradoaz{
+    background: #000dff;
+}
 /*Los estilos de las tarjetas */
 .card-product {
     width: 276px;
@@ -67,7 +61,7 @@
     font-family: Roboto, sans-serif;
     font-size: 16px;
     color: #000000;
-    padding-top: 12px;
+    padding-top: 10px;
     margin: 0;
     text-align: center;
 }
@@ -139,8 +133,22 @@
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-
 }
+
+.cuadrado{
+    width: 25px; 
+    height: 25px; 
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+}
+.cuadrado:hover {
+    border: solid #000000 2px;
+    cursor:pointer
+}
+
+
+
 @media (max-width: 960px){
     .card-product {
         width: 160px;
@@ -162,6 +170,18 @@
         height: 18px; 
     }
     .cuadradoro{
+        width: 18px; 
+        height: 18px; 
+    }
+    .cuadradomo{
+        width: 18px; 
+        height: 18px; 
+    }
+    .cuadradogri{
+        width: 18px; 
+        height: 18px; 
+    }
+    .cuadradoaz{
         width: 18px; 
         height: 18px; 
     }

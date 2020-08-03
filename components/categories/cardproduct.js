@@ -6,11 +6,16 @@ const ProductC = (props) => {
                 </div>
                 <div className="name-product">
                     {/*{props.category}*/}
-                    <div className="color-product row justify-content-center">
-                        <div className="cuadradoce"></div>
-                        <div className="cuadradove"></div>
-                        <div className="cuadradoro"></div>
-                        <div className="cuadradoam"></div>
+                    <div className="color-product  scroll-horizontal">
+                        <div className="cuadradoce cuadrado"></div>
+                        <div className="cuadradove cuadrado"></div>
+                        <div className="cuadradoro cuadrado"></div>
+                        <div className="cuadradoam cuadrado"></div>
+                        <div className="cuadradomo cuadrado"></div>
+                        <div className="cuadradogri cuadrado"></div>
+                        <div className="cuadradoaz cuadrado"></div>
+                        <div className="cuadradoce cuadrado"></div>
+                        <div className="cuadradove cuadrado"></div>
                     </div>
                     <div className= "text-small">
                         <p>

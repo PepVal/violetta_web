@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import ProductC from '../../components/categories/cardproduct'
 import Container from '../../components/Container'
 import Footer from '../../components/footer'
-import FilterC from '../../components/categories/filter'
+import FilterC from '../../components/categories/collapseCategories'
 
 const Categories = () => {
     const router = useRouter();

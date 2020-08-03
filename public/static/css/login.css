@@ -74,6 +74,7 @@ form.sign-in-form {
   /* grid-template-columns: 15% 85%; */
   padding: 0 0.4rem;
   position: relative;
+  border: solid #dddddd 1px;
 }
 .input-field .group { 
 	position: relative; 
@@ -146,6 +147,7 @@ form.sign-in-form {
 }
 .checkbox-field span{
   padding-left: 6px;
+  cursor: pointer;
 }
 
 .social-text {

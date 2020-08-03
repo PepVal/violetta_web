@@ -2,7 +2,8 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 import Container from '../../components/Container'
-import NotFound from "../../components/search/notFound";
+import NotFound from '../../components/search/notFound';
+import SearchProduct from '../../components/search/searchProduct'
 import Footer from '../../components/footer'
 
 const Search = () => {
@@ -12,15 +13,15 @@ const Search = () => {
     return (
         <Container >
             <Head>
-                <title>Búsqueda</title>
+                <title> {sid}</title>
             </Head>
             <div className="header-search">
                 <h1>Buscar</h1>
                 <div className="line" />
             </div>
             {sid === "pizza"
-            ?   <NotFound searchTerm={sid} />
-            :   <div>Soy una lista</div>
+            ? <NotFound searchTerm={sid} />
+            : <SearchProduct />
             }
             <Footer />
         </Container>

@@ -13,9 +13,9 @@ const FilterC = (props) => {
                     <div className="col-sm-3 ">
                         <div className="input-group mb-3">
                             <div className="">
-                                <label className="input-group-text " for="inputGroupSelect01">Ordenar:</label>
+                                <label className="input-group-text " for="inputGroupSelect01">Ordenar :</label>
                             </div>
-                            <select className="custom-select " id="inputGroupSelect01">
+                            <select className="custom-select" >
                                 <option selected>______________</option>
                                 <option value="1 ">Precio</option>
                                 <option value="2">Mas vendido</option>
@@ -40,7 +40,7 @@ const FilterC = (props) => {
                     <div className="col-sm-3 ">
                     <div className="input-group mb-3">
                             <div className="">
-                                <label className="input-group-text" for="inputGroupSelect01">Talla:</label>
+                                <label className="input-group-text" for="inputGroupSelect01">Talla :</label>
                             </div>
                             <select className="custom-select " id="inputGroupSelect01">
                                 <option selected>______________</option>
@@ -54,7 +54,7 @@ const FilterC = (props) => {
                     <div className="col-sm-3 ">
                     <div className="input-group mb-3">
                             <div className="">
-                                <label className="input-group-text" for="inputGroupSelect01">Color:</label>
+                                <label className="input-group-text" for="inputGroupSelect01">Color :</label>
                             </div>
                             <select className="custom-select " id="inputGroupSelect01">
                                 <option selected>______________</option>

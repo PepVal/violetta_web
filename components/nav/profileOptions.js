@@ -9,7 +9,6 @@ const ProfileOptions = (props) => {
         const data = JSON.parse(localStorage.getItem('account'))
         data.isLogin = false;
 
-
         const user = JSON.stringify(data)
 
         console.log(user)
@@ -19,7 +18,7 @@ const ProfileOptions = (props) => {
 
     return (
         <div className="dropdown">
-            <img type="button" id="dropdownMenuButton"
+            <img id="dropdownMenuButton"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg" alt="Imagen de perfil" />
 

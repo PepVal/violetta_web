@@ -52,28 +52,41 @@ class Login extends React.Component {
 
         if (this.validateLogin(email, pwd)) {
 
+            const data = JSON.parse(localStorage.getItem('account'))
+
+            const isAuth = this.auth(email, pwd)//existe el usuario
+
             //simulacion de backend todo pro xD
-            if (this.isUser(email, pwd)) {
-                Router.push("/index")
+            if (data !== null) {
+                if (data.role === "user" && isAuth) {
+                    Router.push("/")
+                } else if (data.role === "admin" && isAuth) {
+                    Router.push("/admin")
+                } else {
+                    alert("Tu usuario o contraseña estan mal escritos, revisalos")
+                }
             } else {
-                alert("Tu usuario o contraseña estan mal escritos, revisalos")
+                alert("El usuario no existe, registrate")
             }
+
         }
 
     }
 
-    isUser = (email, pwd) => {
+    auth = (email, pwd) => {
         //const data = localStorage.getItem('account') || ''
+
         const data = JSON.parse(localStorage.getItem('account'))
-        if(data !== null){
+
+        if (data !== null) {
             if ((email === data.email) && (pwd === data.pwd)) {
-                
+
                 data.isLogin = true;
                 const user = JSON.stringify(data)
                 console.log(user)
-    
+
                 localStorage.setItem('account', user)
-    
+
                 return true
             } else {
                 return false
@@ -86,12 +99,21 @@ class Login extends React.Component {
         e.preventDefault();
         const aprove = document.getElementById("policy").checked
 
+        const isAdmin = document.getElementById("ads").checked
+
         const firstName = document.getElementById("name").value;
         const lastName = document.getElementById("lastName").value;
         const email = document.getElementById("email").value;
         const pwd = document.getElementById("pwdRegister").value;
 
-        const role = "user"
+        let role = ""
+
+        if (isAdmin) {
+            role = "admin"
+        } else {
+            role = "user"
+        }
+
         const isLogin = true
 
         let obj = { firstName, lastName, email, pwd, role, isLogin }
@@ -104,7 +126,7 @@ class Login extends React.Component {
                 console.log("USER ", user)
 
                 //simulacion de creacion de usuario
-                this.createAccount(user)
+                this.createAccount(user, isAdmin)
             } else {
                 alert("Hay campos errados")
             }
@@ -117,10 +139,14 @@ class Login extends React.Component {
         return true
     }
 
-    createAccount = (user) => {
+    createAccount = (user, isAdmin) => {
         localStorage.setItem('account', user)
-
-        Router.push("/")
+        console.log("isADMIN? ", isAdmin)
+        if (isAdmin) {
+            Router.push("/admin")
+        } else {
+            Router.push("/")
+        }
     }
 
     render() {

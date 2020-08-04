@@ -116,7 +116,7 @@ class SlideBar extends React.Component {
         {this.state.logged
           ? <div>Mi cuenta</div>
           : <Link href="/login">
-            <a type="button" className="menu-item" >Iniciar Sesión</a>
+            <p className="menu-item" >Iniciar Sesión</p>
           </Link>
         }
       </Menu >

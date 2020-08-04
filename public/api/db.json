@@ -38,22 +38,22 @@
     },
     "popular": {
         "male": [
-            {"_id": 1,"img": "https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31497_01_720x.jpg", "name": "Camiseta Granate Shelby ", "price": "29.90", "description":"Las combinaciones de color ganadoras se unen en la camiseta de manga corta Shelby. De corte regular y cuello redondo está confeccionada en algodón.",
+            {"img": "https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31497_01_720x.jpg", "name": "Camiseta Granate Shelby ", "price": "29.90", "description":"Las combinaciones de color ganadoras se unen en la camiseta de manga corta Shelby. De corte regular y cuello redondo está confeccionada en algodón.",
                 "colors": [{"color": "#32a852"}, {"color": "#2c7fc7"}, {"color": "#f0270c"}, {"color": "#f5e50a"}, {"color": "#000000"}, {"color": "#cccccc"},{"color": "#00ffc3"}],
                 "arrayImg":[{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31497_01_720x.jpg", "name": "Camiseta Granate Shelby "},{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31497_02_720x.jpg", "name": "Camiseta Granate Shelby"},
                     {"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31497_03_720x.jpg", "name": "Camiseta Granate Shelby"},{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31497_04_720x.jpg?v=1579874121", "name": "Camiseta Granate Shelby"}]}
             ,
-            {"_id": 2, "img": "https://cdn.shopify.com/s/files/1/0052/6503/1286/products/13201_01_720x.jpg ", "name": "Polo Academy granate ", "price": "19.99", "description":"Simplicidad y elegancia se unen en el polo Academy de manga corta realizado en tejido piqué de algodón con bordado a color contraste a la altura del pecho izquierdo.",
+            {"img": "https://cdn.shopify.com/s/files/1/0052/6503/1286/products/13201_01_720x.jpg ", "name": "Polo Academy granate ", "price": "19.99", "description":"Simplicidad y elegancia se unen en el polo Academy de manga corta realizado en tejido piqué de algodón con bordado a color contraste a la altura del pecho izquierdo.",
                 "colors": [{"color": "#32a852"}, {"color": "#2c7fc7"}, {"color": "#f0270c"}, {"color": "#f5e50a"}, {"color": "#000000"}, {"color": "#cccccc"},{"color": "#00ffc3"}],
                 "arrayImg":[{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/13201_01_720x.jpg", "name": "Polo Academy granate "},{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/13201_02_720x.jpg", "name": "Polo Academy granate "},
                     {"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/13201_03_720x.jpg", "name": "Polo Academy granate "}]}
             ,
-            {"_id": 3,"img": "https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31851_01_720x.jpg", "name": "Polo piqué verde botella ", "price": "24.99", "description":"El polo de manga corta con logo bordado a color contraste a la altura del pecho es sin duda la prenda más versátil para aquellos que eligen la opción intermedia entre la camisa y la camiseta.",
+            {"img": "https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31851_01_720x.jpg", "name": "Polo piqué verde botella ", "price": "24.99", "description":"El polo de manga corta con logo bordado a color contraste a la altura del pecho es sin duda la prenda más versátil para aquellos que eligen la opción intermedia entre la camisa y la camiseta.",
                 "colors": [{"color": "#32a852"}, {"color": "#2c7fc7"}, {"color": "#f0270c"}, {"color": "#f5e50a"}, {"color": "#000000"}, {"color": "#cccccc"},{"color": "#00ffc3"}],
                 "arrayImg":[{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31851_01_720x.jpg", "name": "Polo piqué verde botella "},{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31851_04_720x.jpg", "name": "Polo piqué verde botella "},
                     {"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31851_03_720x.jpg", "name": "Polo piqué verde botella "},{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31851_02_720x.jpg", "name": "Polo piqué verde botella "}]}
             ,
-            {"_id": 4,"img": "https://cdn.shopify.com/s/files/1/0052/6503/1286/products/27204_02_720x.jpg", "name": "Sudadera Title azul ", "price": "29.99", "description":"Siente el espíritu Polo Club con la sudadera Title gracias a la impresión frontal a dos tonos a la altura del pecho. Confeccionada en ligera felpa de algodón presenta mangas ranglan y terminaciones acanaladas en cuello, puños y cintura. ",
+            {"img": "https://cdn.shopify.com/s/files/1/0052/6503/1286/products/27204_02_720x.jpg", "name": "Sudadera Title azul ", "price": "29.99", "description":"Siente el espíritu Polo Club con la sudadera Title gracias a la impresión frontal a dos tonos a la altura del pecho. Confeccionada en ligera felpa de algodón presenta mangas ranglan y terminaciones acanaladas en cuello, puños y cintura. ",
                 "colors": [{"color": "#32a852"}, {"color": "#2c7fc7"}, {"color": "#f0270c"}, {"color": "#f5e50a"}, {"color": "#000000"}, {"color": "#cccccc"},{"color": "#00ffc3"}],
                 "arrayImg":[{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/27204_02_720x.jpg?v=1576080170", "name": "Sudadera Title azul "},{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/27204_04_720x.jpg", "name": "Sudadera Title azul "}
                     ,{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/27204_01_720x.jpg", "name": "Sudadera Title azul "},{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/27204_03_720x.jpg?v=1576080170", "name": "Sudadera Title azul "}]}
@@ -66,9 +66,27 @@
             {"img": "https://image.freepik.com/vector-gratis/permanecer-casa-ilustracion-concepto_23-2148479211.jpg", "name": "Gorra"}
         ]
     },
-    "relation":{
-        "one" : []
-    },
+    "related":[
+        {"img": "https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31497_01_720x.jpg", "name": "Camiseta Granate Shelby ", "price": "29.90", "description":"Las combinaciones de color ganadoras se unen en la camiseta de manga corta Shelby. De corte regular y cuello redondo está confeccionada en algodón.",
+            "colors": [{"color": "#32a852"}, {"color": "#2c7fc7"}, {"color": "#f0270c"}, {"color": "#f5e50a"}, {"color": "#000000"}, {"color": "#cccccc"},{"color": "#00ffc3"}],
+            "arrayImg":[{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31497_01_720x.jpg", "name": "Camiseta Granate Shelby "},{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31497_02_720x.jpg", "name": "Camiseta Granate Shelby"},
+                {"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31497_03_720x.jpg", "name": "Camiseta Granate Shelby"},{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31497_04_720x.jpg?v=1579874121", "name": "Camiseta Granate Shelby"}]}
+        ,
+        {"img": "https://cdn.shopify.com/s/files/1/0052/6503/1286/products/13201_01_720x.jpg ", "name": "Polo Academy granate ", "price": "19.99", "description":"Simplicidad y elegancia se unen en el polo Academy de manga corta realizado en tejido piqué de algodón con bordado a color contraste a la altura del pecho izquierdo.",
+            "colors": [{"color": "#32a852"}, {"color": "#2c7fc7"}, {"color": "#f0270c"}, {"color": "#f5e50a"}, {"color": "#000000"}, {"color": "#cccccc"},{"color": "#00ffc3"}],
+            "arrayImg":[{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/13201_01_720x.jpg", "name": "Polo Academy granate "},{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/13201_02_720x.jpg", "name": "Polo Academy granate "},
+                {"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/13201_03_720x.jpg", "name": "Polo Academy granate "}]}
+        ,
+        {"img": "https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31851_01_720x.jpg", "name": "Polo piqué verde botella ", "price": "24.99", "description":"El polo de manga corta con logo bordado a color contraste a la altura del pecho es sin duda la prenda más versátil para aquellos que eligen la opción intermedia entre la camisa y la camiseta.",
+            "colors": [{"color": "#32a852"}, {"color": "#2c7fc7"}, {"color": "#f0270c"}, {"color": "#f5e50a"}, {"color": "#000000"}, {"color": "#cccccc"},{"color": "#00ffc3"}],
+            "arrayImg":[{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31851_01_720x.jpg", "name": "Polo piqué verde botella "},{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31851_04_720x.jpg", "name": "Polo piqué verde botella "},
+                {"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31851_03_720x.jpg", "name": "Polo piqué verde botella "},{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31851_02_720x.jpg", "name": "Polo piqué verde botella "}]}
+        ,
+        {"img": "https://cdn.shopify.com/s/files/1/0052/6503/1286/products/27204_02_720x.jpg", "name": "Sudadera Title azul ", "price": "29.99", "description":"Siente el espíritu Polo Club con la sudadera Title gracias a la impresión frontal a dos tonos a la altura del pecho. Confeccionada en ligera felpa de algodón presenta mangas ranglan y terminaciones acanaladas en cuello, puños y cintura. ",
+            "colors": [{"color": "#32a852"}, {"color": "#2c7fc7"}, {"color": "#f0270c"}, {"color": "#f5e50a"}, {"color": "#000000"}, {"color": "#cccccc"},{"color": "#00ffc3"}],
+            "arrayImg":[{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/27204_02_720x.jpg?v=1576080170", "name": "Sudadera Title azul "},{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/27204_04_720x.jpg", "name": "Sudadera Title azul "}
+                ,{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/27204_01_720x.jpg", "name": "Sudadera Title azul "},{"img":"https://cdn.shopify.com/s/files/1/0052/6503/1286/products/27204_03_720x.jpg?v=1576080170", "name": "Sudadera Title azul "}]}
+    ],
     "search": [],
     "products": [
         {"img": "https://cdn.shopify.com/s/files/1/0052/6503/1286/products/31497_01_720x.jpg", "name": "Camiseta Granate Shelby", "price": "29.90", "description":"Las combinaciones de color ganadoras se unen en la camiseta de manga corta Shelby. De corte regular y cuello redondo está confeccionada en algodón.",

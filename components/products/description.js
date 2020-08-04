@@ -1,3 +1,4 @@
+import ModalProduct from './modalProduct'
 
 class Description extends React.Component {
 
@@ -38,6 +39,12 @@ class Description extends React.Component {
                 </div>
                 <div className="colors">
                     <p className="bold">Colores:</p>
+                    <ul className="d-flex justify-content-center">
+                        {colors.map((color,id)=> (
+                            <li className="cuadrado"
+                            key={id} style={{ background: color.color }} />
+                        ))}
+                    </ul>
                 </div>
                 <div className="clothes-size">
                     <p className="bold">Tallas:</p>
@@ -78,9 +85,12 @@ class Description extends React.Component {
                         <button onClick={(e) => this.handleBuy()} disabled={isChecked === "NA"}>COMPRAR YA</button>
                     </div>
                     <div>
-                        <button onClick={(e) => this.handleAddCart()} disabled={isChecked === "NA"}>AÑADIR AL CARRITO</button>
+                        <button data-toggle="modal" data-target="#productModal" disabled={isChecked === "NA"}>AÑADIR AL CARRITO</button>
                     </div>
                 </div>
+                
+                <ModalProduct/>
+                
             </div>
         )
     }

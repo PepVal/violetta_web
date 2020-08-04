@@ -9,12 +9,18 @@ import CarouselProduct from '../../components/products/carouselProduct'
 import Description from '../../components/products/description'
 import RelatedProducts from '../../components/products/relatedProducts'
 
-const Products = ({product}) => {
+
+const Products = ({ product, related }) => {
     const router = useRouter();
     const { pid } = router.query;
     
-    // sube el scroll automaticamente :D
-    document.documentElement.scrollTop = 0;
+    try {
+        // sube el scroll automaticamente :D
+        document.documentElement.scrollTop = 0;
+    } catch (error) {
+        console.log(error)
+    }
+
 
     return (
         <Container >
@@ -22,12 +28,12 @@ const Products = ({product}) => {
                 <title> {pid}</title>
             </Head>
             <div className="product">
-                <CarouselProduct images={product[0].arrayImg}/>
+                <CarouselProduct images={product[0].arrayImg} />
                 <Description name={product[0].name} price={product[0].price} colors={product[0].colors}
-                 description={product[0].description}/>
+                    description={product[0].description} />
             </div>
             <div>
-                <RelatedProducts />
+                <RelatedProducts data={related} />
             </div>
             <Footer />
         </Container>
@@ -37,11 +43,12 @@ const Products = ({product}) => {
 Products.getInitialProps = async (ctx) => {
 
     // console.log("CTX get initial", ctx.query.pid)
+    const relatedData = await dataLocal.related
 
-    const found = dataLocal.products.filter(function(item){
+    const found = await dataLocal.products.filter(function (item) {
         return item.name == ctx.query.pid
     });
-    return {product: found}
+    return { product: found, related: relatedData }
 }
 
 export default Products

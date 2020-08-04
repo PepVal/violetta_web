@@ -97,7 +97,7 @@
 
 /* pequeña descripcion de la ropa */
 .clothes-description {
-    margin-top: 16px;
+    margin-top: 0px;
 }
 .text-description {
     font-size: 16px!important;
@@ -105,7 +105,7 @@
 
 /* botones de comprar ahora y añadir al carrito */
 .clothes-buttons {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 .clothes-buttons button {
     height: 46px;
@@ -129,6 +129,11 @@
     background-color: #b2b2b2!important;
     color: #212529!important;
 }
+/* mensaje de ayuda u.u */
+.clothes-buttons p {
+    font-size: 13px;
+    font-weight: bold;
+}
 
 /* productos relacionados */
 .title-related-products {
@@ -144,6 +149,31 @@
     background-color: #212529;
 }
 
+/* carousel mod */
+.bg-carousel-product{
+    /* background: linear-gradient(-45deg, #514597 0%, #9B51E0 100%); */
+    background: #fafafa;
+}
+/* pagination */
+/* hay que elegir los colores bien pa esta cochinada jsjs */
+/* estan los de instagram xD */
+.bg-carousel-product .carousel-indicators li{
+    background-color: #a8a8a8!important;
+}
+.bg-carousel-product .carousel-indicators .active{
+    background-color: #0095f6!important;
+}
+/* indicadores next and prev */
+.bg-carousel-product .carousel-control-next-icon{
+    width: 50px;
+    height: 50px;
+    background-image: url("../../chevron-right.svg");
+}
+.bg-carousel-product .carousel-control-prev-icon{
+    width: 50px;
+    height: 50px;
+    background-image: url("../../chevron-left.svg");
+}
 
 @media (max-width: 768px){
     .product-img {

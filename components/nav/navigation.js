@@ -62,7 +62,6 @@ class Navigation extends React.Component {
         return (
             <header className="navBar align-items-center">
                 <div className="toogle-icon">
-                    {/* <img onClick={() => this.handleOpenSlide()} src="/toogle_button.svg" alt="Menu" /> */}
                     <SlideBar />
                 </div>
 

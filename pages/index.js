@@ -1,5 +1,7 @@
 import React from 'react'
-import fetch from 'isomorphic-fetch'
+
+// datos locales en un archivo json, si todo esta en un json xD
+import dataLocal from '../public/api/db.json'
 
 // Components
 import Container from '../components/Container'
@@ -23,10 +25,10 @@ const Index = (props) => {
 
 
 Index.getInitialProps = async (ctx) => {
-    const res = await fetch('https://my-json-server.typicode.com/PepVal/fake-server/popular')
-    const data = await res.json()
+    
+    const local = await dataLocal.popular
 
-    return {popular: data}
+    return {popular: local}
 }
 
 export default Index

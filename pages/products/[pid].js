@@ -30,7 +30,7 @@ const Products = ({ product, related }) => {
             <div className="product">
                 <CarouselProduct images={product[0].arrayImg} />
                 <Description name={product[0].name} price={product[0].price} colors={product[0].colors}
-                    description={product[0].description} />
+                    description={product[0].description} img={product[0].img}/>
             </div>
             <div>
                 <RelatedProducts data={related} />

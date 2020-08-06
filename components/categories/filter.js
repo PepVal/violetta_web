@@ -3,7 +3,7 @@ const Filter =(props)=>{
         <div className="col-sm-3 ">
             <div className="input-group mb-3">
                 <div className="">
-                    <label className="input-group-text " for="inputGroupSelect01">Ordenar:</label>
+                    <label className="input-group-text " for="inputGroupSelect01" >Ordenar:</label>
                 </div>
                 <select className="custom-select " id="inputGroupSelect01">
                     <option selected>______________</option>

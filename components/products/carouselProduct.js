@@ -1,27 +1,20 @@
 
-const CarouselProduct = (props) => {
-
+const CarouselProduct = ({ images }) => {
     return (
-        <div className="bg-carousel col-12 col-md-6">
+        <div className="bg-carousel-product col-12 col-md-6">
             <div id="carouselProducts" className="carousel slide" data-ride="carousel">
                 <ol className="carousel-indicators">
-                    <li data-target="#carouselProducts" data-slide-to="0" className="active"></li>
-                    <li data-target="#carouselProducts" data-slide-to="1"></li>
-                    <li data-target="#carouselProducts" data-slide-to="2"></li>
+                    {images.map((item, id) => (
+                        <li data-target="#carouselProducts" data-slide-to={id} className={id == 0 ? "active" : null} />
+                    ))}
                 </ol>
                 <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <img className="d-block w-100 product-img"
-                            src="/img/carousel_1.svg" alt="First slide" />
-                    </div>
-                    <div className="carousel-item">
-                        <img className="d-block w-100 product-img"
-                            src="/img/carousel_2.svg" alt="Second slide" />
-                    </div>
-                    <div className="carousel-item">
-                        <img className="d-block w-100 product-img"
-                            src="/img/carousel_3.svg" alt="Third slide" />
-                    </div>
+                    {images.map((image, id) => (
+                        <div className={"carousel-item " + (id == 0 ? "active" : null)} >
+                            <img className="d-block w-100 product-img"
+                                src={image.img} alt={image.name} />
+                        </div>
+                    ))}
                 </div>
                 <a className="carousel-control-prev" href="#carouselProducts" role="button" data-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -32,7 +25,7 @@ const CarouselProduct = (props) => {
                     <span className="sr-only">Next</span>
                 </a>
             </div>
-        </div>
+        </div >
     )
 }
 

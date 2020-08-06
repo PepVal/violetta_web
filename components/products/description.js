@@ -1,3 +1,4 @@
+import ModalProduct from './modalProduct'
 
 class Description extends React.Component {
 
@@ -13,31 +14,76 @@ class Description extends React.Component {
         this.setState({ isChecked: size })
     }
 
-    handleBuy = () =>{
+    handleBuy = () => {
         alert("COMPRAR")
     }
 
-    handleAddCart = () => {
-        alert("AÑADIR A CARRITO")
+    handleAddCart = (e) => {
+        e.preventDefault();
+
+        const img = this.props.img
+        const name = this.props.name 
+        const size = this.state.isChecked
+
+        // Datos parceados por probar
+        const price = this.props.price
+        const count = document.getElementById("count").value
+        const total = parseFloat(this.props.price) * parseInt(document.getElementById("count").value, 10)
+        let obj = { img, name, price, size, count, total }
+
+        // this function does all magic :D
+        this.addCartLocalStorage(obj)
+
+    }
+
+    addCartLocalStorage = (item) => {
+
+        const cart = JSON.parse(localStorage.getItem('cart'))
+
+        if (cart !== null) { //SI NO es nulo quiere decir que ya existen datos previos
+
+            cart.items.push(item);
+
+            localStorage.setItem('cart', JSON.stringify(cart))
+
+        } else { //SI ES null quiere decir que no existe ese localstorage
+
+            let items = []
+
+            let arrayItems = {items}
+
+            arrayItems.items.push(item)
+            
+            localStorage.setItem('cart', JSON.stringify(arrayItems))
+        }
     }
 
     render() {
         const { isChecked } = this.state
+        const { name, price, colors, description } = this.props
         return (
             <div className="col-12 col-md-6 description-container">
-                <h2>Vestido polo azul marino</h2>
+                <h2>{name}</h2>
 
                 <div className="d-flex justify-content-between">
                     <div className="count-input">
                         <p className="bold">Cantidad: </p>
-                        <input type="number" placeholder="1" defaultValue="1"
-                        min="1" max="99" aria-valuemax="99" aria-valuemin="1" aria-label="Cantidad de Ropa"/>
+                        <input type="number" id="count" placeholder="1" defaultValue="1"
+                            min="1" max="99" aria-valuemax="99" aria-valuemin="1" aria-label="Cantidad de Ropa" />
                     </div>
-                    <p className="bold">Precio: $20</p>
+                    <p className="bold">Precio: ${price}</p>
                 </div>
+
                 <div className="colors">
                     <p className="bold">Colores:</p>
+                    <ul className="d-flex justify-content-center">
+                        {colors.map((color, id) => (
+                            <li className="cuadrado"
+                                key={id} style={{ background: color.color }} />
+                        ))}
+                    </ul>
                 </div>
+
                 <div className="clothes-size">
                     <p className="bold">Tallas:</p>
                     <ul>
@@ -67,18 +113,25 @@ class Description extends React.Component {
                         </li>
                     </ul>
                 </div>
+
                 <div className="clothes-description">
                     <p className="bold">Descripción:</p>
-                    <p className="text-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p className="text-description">{description}</p>
                 </div>
+
                 <div className="clothes-buttons">
+                    <p style={{ display: isChecked === "NA" ? "block" : "none" }}>Debes seleccionar una talla antes de comprar o añadir al carrito</p>
                     <div>
-                        <button onClick={(e)=> this.handleBuy()} disabled={isChecked === "NA"}>COMPRAR YA</button>
+                        <button onClick={(e) => this.handleBuy()} disabled={isChecked === "NA"}>COMPRAR YA</button>
                     </div>
                     <div>
-                        <button onClick={(e)=> this.handleAddCart()} disabled={isChecked === "NA"}>AÑADIR AL CARRITO</button>
+                        <button onClick={(e) => this.handleAddCart(e)} data-toggle="modal"
+                            data-target="#productModal" disabled={isChecked === "NA"}>AÑADIR AL CARRITO</button>
                     </div>
                 </div>
+
+                <ModalProduct />
+
             </div>
         )
     }

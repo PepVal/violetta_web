@@ -7,7 +7,7 @@ const Category = (props) => {
             <h1>{props.gender == 0 ? "Para él" : "Para ella"}</h1>
             <div className="scroll-horizontal">
                 {props.data.map((item, id) => (
-                    <ItemCategory key={id} img={item.img} category={item.name} />
+                    <ItemCategory key={id} item={item} />
                 )
                 )}
             </div>

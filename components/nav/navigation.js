@@ -62,7 +62,6 @@ class Navigation extends React.Component {
         return (
             <header className="navBar align-items-center">
                 <div className="toogle-icon">
-                    {/* <img onClick={() => this.handleOpenSlide()} src="/toogle_button.svg" alt="Menu" /> */}
                     <SlideBar />
                 </div>
 
@@ -94,7 +93,7 @@ class Navigation extends React.Component {
                 </div>
                 <div className="nav-icons">
                     <div className="search-icon">
-                        <img type="button" data-toggle="collapse" data-target="#searchCollapse"
+                        <img data-toggle="collapse" data-target="#searchCollapse"
                             aria-expanded="false" aria-controls="searchCollapse"
                             src="/buscar.svg" alt="Buscar" />
                     </div>

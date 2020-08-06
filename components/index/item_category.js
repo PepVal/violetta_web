@@ -1,22 +1,21 @@
-import Router from 'next/router'
+import Router, {useRouter} from 'next/router'
 
 const ItemCategory = (props) => {
 
     const handleItemCategory = (e) => {
         // sube el scroll automaticamente :D
-        document.documentElement.scrollTop = 0;
-        
-        Router.push('/products/[pid]', `/products/${2}`)
+        // document.documentElement.scrollTop = 0;
+        Router.push('/products/[pid]', `/products/${props.item.name}`)
     }
 
     return (
         <div onClick={(e) => handleItemCategory(e)} className="card-item">
             <div>
-                <img src={props.img} alt={props.category} />
+                <img src={props.item.img} alt={props.item.name} />
             </div>
             <div className="name-category">
                 <p>
-                    {props.category}
+                    {props.item.name}
                 </p>
             </div>
         </div>

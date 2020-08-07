@@ -14,6 +14,7 @@ const ProfileOptions = (props) => {
         console.log(user)
         
         localStorage.setItem('account', user)
+        Router.reload();
     }
 
     return (
@@ -26,7 +27,7 @@ const ProfileOptions = (props) => {
                 <a className="dropdown-item" href="#">Historial</a>
                 <a className="dropdown-item" href="#">Another action</a>
                 <div className="dropdown-divider" />
-                <a onClick={logout} className="dropdown-item" href="/">Cerrar sesión</a>
+                <a onClick={logout} className="dropdown-item" href="">Cerrar sesión</a>
             </div>
         </div>
     )

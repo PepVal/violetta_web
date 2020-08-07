@@ -2,59 +2,6 @@ import Link from 'next/link'
 import Router from 'next/router'
 import { slide as Menu } from 'react-burger-menu'
 
-
-var styles = {
-  bmBurgerButton: {
-    position: 'relative',
-    width: '24px',
-    height: '20px',
-    left: '12px',
-  },
-  bmIcon: {
-    margin: '0px',
-  },
-  bmBurgerBars: {
-    background: '#ffffff',
-    height: '2px'
-  },
-  bmBurgerBarsHover: {
-    background: '#a90000'
-  },
-  bmCrossButton: {
-    height: '24px',
-    width: '24px'
-  },
-  bmCross: {
-    background: '#bdc3c7'
-  },
-  bmMenuWrap: {
-    position: 'fixed',
-    height: '100%',
-    top: '0px'
-  },
-  bmMenu: {
-    background: '#373a47',
-    padding: '2.5em 1.5em 0',
-    fontSize: '1.15em'
-  },
-  bmMorphShape: {
-    fill: '#373a47'
-  },
-  bmItemList: {
-    color: '#b8b7ad',
-    padding: '0.8em',
-    height: '100%',
-    display: 'block',
-  },
-  bmItem: {
-    display: 'block'
-  },
-  bmOverlay: {
-    background: 'rgba(0, 0, 0, 0.3)',
-    top: '0px'
-  }
-}
-
 class SlideBar extends React.Component {
 
   constructor(props) {
@@ -105,18 +52,18 @@ class SlideBar extends React.Component {
   render() {
     return (
       <Menu isOpen={this.state.menuOpen}
-       onStateChange={(state) => this.handleStateChange(state)}>
+        onStateChange={(state) => this.handleStateChange(state)}>
         <h2>Tienda</h2>
-        <p onClick={(e) => this.handleNav("hombre")} id="hombre" className="menu-item" >Hombre</p>
-        <p onClick={(e) => this.handleNav("mujer")} id="mujer" className="menu-item" >Mujer</p>
-        <p onClick={(e) => this.handleNav("niños")} id="niños" className="menu-item" >Niños</p>
-        <p onClick={(e) => this.handleNav("accesorios")} id="accesorios" className="menu-item" >Accesorios</p>
+        <h3 onClick={(e) => this.handleNav("hombre")} id="hombre" className="menu-item" >Hombre</h3>
+        <h3 onClick={(e) => this.handleNav("mujer")} id="mujer" className="menu-item" >Mujer</h3>
+        <h3 onClick={(e) => this.handleNav("niños")} id="niños" className="menu-item" >Niños</h3>
+        <h3 onClick={(e) => this.handleNav("accesorios")} id="accesorios" className="menu-item" >Accesorios</h3>
 
 
         {this.state.logged
           ? <div>Mi cuenta</div>
           : <Link href="/login">
-            <p className="menu-item" >Iniciar Sesión</p>
+            <h3 className="menu-item" >Iniciar Sesión</h3>
           </Link>
         }
       </Menu >

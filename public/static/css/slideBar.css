@@ -1,6 +1,6 @@
 /* font-family to elements */
 .bm-item-list h2,
-.bm-item-list p,
+.bm-item-list h3,
 .bm-item-list a {
     font-family: Roboto, sans-serif;
     font-weight: bold;
@@ -16,6 +16,7 @@
 
 .bm-burger-button button {
     outline: none;
+    color: #ffffff;
 }
 
 /* Color/shape of burger icon bars */
@@ -33,6 +34,10 @@
 .bm-cross-button {
     height: 24px;
     width: 24px;
+}
+.bm-cross-button button {
+    outline: none;
+    color: #ffffff;
 }
 
 /* Color/shape of close button cross */
@@ -69,9 +74,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
     height: 100%;
     display: block;
 }
-.bm-item-list p:hover {
+.bm-item-list h3{
+    font-size: 18.4px;
+}
+.bm-item-list h3:hover {
     cursor: pointer;
-    color: aqua;
+    color: #c94e50;
 }
 
 /* Individual item */

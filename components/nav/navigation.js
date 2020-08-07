@@ -54,10 +54,6 @@ class Navigation extends React.Component {
         Router.push('/search/[sid]', `/search/${item_search}`)
     }
 
-    handleOpenSlide() {
-
-    }
-
     render() {
         return (
             <header className="navBar align-items-center">
@@ -72,7 +68,7 @@ class Navigation extends React.Component {
                         </Link>
                     </h2>
                 </div>
-                <ul className="items-group justify-content-center" role="navigation">
+                <ul className="items-group justify-content-center">
                     <li onClick={() => this.handleNav("hombre")}>
                         <a className={"" + (this.state.category === "hombre" ? 'active' : '')}>HOMBRE</a>
                     </li>

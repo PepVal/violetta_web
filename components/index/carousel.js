@@ -10,15 +10,15 @@ const Carousel = () => {
             <div className="carousel-inner">
                 <div className="carousel-item active">
                     <img src="/img/carousel_1.svg" 
-                    className="d-block w-100 img-carousel" alt="oferta" />
+                    className="d-block w-100 img-carousel" alt="Producto destacado" />
                 </div>
                 <div className="carousel-item">
                     <img src="/img/carousel_2.svg"
-                    className="d-block w-100 img-carousel" alt="oferta" />
+                    className="d-block w-100 img-carousel" alt="Producto destacado" />
                 </div>
                 <div className="carousel-item">
                     <img src="/img/carousel_3.svg" 
-                    className="d-block w-100 img-carousel" alt="oferta" />
+                    className="d-block w-100 img-carousel" alt="Producto destacado" />
                 </div>
             </div>
             <a className="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">

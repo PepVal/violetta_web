@@ -5,7 +5,7 @@ import ProductC from '../../components/categories/cardproduct'
 import Container from '../../components/Container'
 import Footer from '../../components/footer'
 import FilterC from '../../components/categories/collapseCategories'
-import NotFound from '../../components/search/notFound'
+import Error404 from '../../components/categories/Error404'
 
 const Categories = (props) => {
     const router = useRouter();
@@ -29,7 +29,7 @@ const Categories = (props) => {
                         id ==="accesorios"?
                         props.category.accesorios.map((product,id)   => (<ProductC key={id} data={product}></ProductC>))
                         :
-                        <NotFound></NotFound>
+                        <Error404></Error404>
                     }
                 </ul>
                 <Footer/>

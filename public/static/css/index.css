@@ -121,9 +121,11 @@ body{
     background: rgba(255, 255, 255, 0.33);
     border-radius: 100px;
     outline: none;
+    font-family: Roboto, sans-serif;
 }
 .navBar .input-search input::placeholder{
     color: #ffffff;
+    font-family: Roboto, sans-serif;
 }
 
 /* Icons Nav */
@@ -270,7 +272,6 @@ body{
     text-align: center;
 }
 
-
 /* footer */
 .footer {
     margin-top: 163px;
@@ -279,8 +280,10 @@ body{
     background-color: #281F58;
     width: 100%;
 }
-.footer h4 {
+.footer h2 {
+    font-size: 28px;
     color: #ffffff!important;
+    font-family: Roboto, sans-serif;
 }
 .footer p {
     color: #ffffff!important;
@@ -338,6 +341,7 @@ body{
     padding: 6px;
     margin: 0;
     font-size: 12px;
+    font-family: Roboto, sans-serif;
 }
 
 /* BREAKPOINT FOR RESPONSIVE */

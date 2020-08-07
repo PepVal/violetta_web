@@ -11,7 +11,7 @@ const ItemCategory = (props) => {
     return (
         <div onClick={(e) => handleItemCategory(e)} className="card-item">
             <div>
-                <img src={props.item.img} alt={props.item.name} />
+                <img src={props.item.img} alt=""/>
             </div>
             <div className="name-category">
                 <p>

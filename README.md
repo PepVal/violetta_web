@@ -11,7 +11,7 @@ clothes shop with react and next.js (only frontend)
  - [Next.js](https://nextjs.org/docs/getting-started) click for more info
  - [Boostrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/) click for more info
  - [React-Burger-Menu](https://github.com/negomi/react-burger-menu) click for more info
- \Al final no se usaron esta libreria porque los datos estan localmente
+ - Las siguientes librerias no se usaron al final.
  - [isomorphic-fetch](https://github.com/matthew-andrews/isomorphic-fetch) click for more info
  - [fake-server-api-rest](https://my-json-server.typicode.com/PepVal/fake-server) click for more info
 

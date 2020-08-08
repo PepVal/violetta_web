@@ -8,12 +8,12 @@ import Footer from '../../components/footer'
 import CarouselProduct from '../../components/products/carouselProduct'
 import Description from '../../components/products/description'
 import RelatedProducts from '../../components/products/relatedProducts'
-
+import NotFoundProduct from '../../components/products/notFound'
 
 const Products = ({ product, related }) => {
     const router = useRouter();
     const { pid } = router.query;
-    
+
     try {
         // sube el scroll automaticamente :D
         document.documentElement.scrollTop = 0;
@@ -21,17 +21,22 @@ const Products = ({ product, related }) => {
         console.log(error)
     }
 
-
     return (
         <Container >
             <Head>
                 <title> {pid}</title>
             </Head>
-            <div className="product">
-                <CarouselProduct images={product[0].arrayImg} />
-                <Description name={product[0].name} price={product[0].price} colors={product[0].colors}
-                    description={product[0].description} img={product[0].img}/>
-            </div>
+            {product[0] !== undefined
+                ?
+                <div className="product">
+                    <CarouselProduct images={product[0].arrayImg} />
+                    <Description name={product[0].name} price={product[0].price} colors={product[0].colors}
+                        description={product[0].description} img={product[0].img} />
+                </div>
+                :
+                <NotFoundProduct/>   
+            }
+
             <div>
                 <RelatedProducts data={related} />
             </div>

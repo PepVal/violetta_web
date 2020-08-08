@@ -5,6 +5,7 @@ const NotFound = (props) => {
     const newSearch = (e) => {
         e.preventDefault()
         const item_search = document.getElementById('search').value
+        console.log("Soy parametro ",item_search)
         Router.push('/search/[sid]', `/search/${item_search}`)
     }
 
@@ -19,7 +20,7 @@ const NotFound = (props) => {
                 <li>Limita la búsqueda a una o dos palabras.</li>
             </ul>
             <div className="new-search">
-                <form onSubmit={(e) => newSearch}>
+                <form onSubmit={(e) => newSearch(e)}>
                     <input id="search" placeholder="Buscar en nuestra tienda" 
                     aria-label="Buscar prenda"/>
                     <button type="submit">

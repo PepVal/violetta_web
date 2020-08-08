@@ -122,11 +122,11 @@ class Description extends React.Component {
                 <div className="clothes-buttons">
                     <p style={{ display: isChecked === "NA" ? "block" : "none" }}>Debes seleccionar una talla antes de comprar o añadir al carrito</p>
                     <div>
-                        <button onClick={(e) => this.handleBuy()} disabled={isChecked === "NA"}>COMPRAR YA</button>
+                        <button onClick={(e) => this.handleBuy()} disabled={isChecked === "NA"}>Comprar Ya</button>
                     </div>
                     <div>
                         <button onClick={(e) => this.handleAddCart(e)} data-toggle="modal"
-                            data-target="#productModal" disabled={isChecked === "NA"}>AÑADIR AL CARRITO</button>
+                            data-target="#productModal" disabled={isChecked === "NA"}>Añadir al Carrito</button>
                     </div>
                 </div>
 

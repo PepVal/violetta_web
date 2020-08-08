@@ -77,17 +77,18 @@ form.sign-in-form {
   border: solid #dddddd 1px;
 }
 .input-field .group { 
-	position: relative; 
-	padding: 15px 0px 15px 0px; 
+  position: relative; 
+  width: 100%;
 }
 .input-field .arriba {
   top: 0px !important;
   font-size: 0.8rem;
   font-weight: 500;
   color: #4a89dc !important;
+  padding: 0px;
 }
 .input-field label {
-  color: #999; 
+  color: #636363; 
   margin: 0px;
   font-weight: 600;
   font-size: 1.05rem;
@@ -95,12 +96,15 @@ form.sign-in-form {
 	pointer-events: none;
   align-content: center;
   justify-content: center;
+  padding: 12px 0px 12px 0px;
 	transition: all 0.2s ease;
 }
 .input-field input {
   background: none;
   outline: none;
   border: none;
+  height: 100%;
+  width: 100%;
   margin-bottom: 0px;
   line-height: 1;
   font-weight: 600;
@@ -129,7 +133,7 @@ form.sign-in-form {
   margin: 0px 6px;
   width: 35px;
   height: 100%;
-  fill: #acacac;
+  fill: #636363;
   transition: 0.5s;
 }
 
@@ -254,7 +258,7 @@ form.sign-in-form {
   transition-delay: 0.6s;
 }
 
-.panel h3 {
+.panel h2 {
   font-weight: 600;
   line-height: 1;
   font-size: 1.5rem;
@@ -271,7 +275,7 @@ form.sign-in-form {
   border: 2px solid #fff;
   width: 130px;
   height: 41px;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 0.8rem;
 }
 
@@ -281,7 +285,6 @@ form.sign-in-form {
 }
 
 /* ANIMATION */
-
 .container-login.sign-up-mode:before {
   transform: translate(100%, -50%);
   right: 52%;

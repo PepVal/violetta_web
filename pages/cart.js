@@ -12,21 +12,25 @@ class Cart extends React.Component {
         super(props)
         this.state = {
             items: [],
-            subtotal: 0
+            subtotal: 0,
+            loading: true
         }
     }
 
     componentDidMount() {
         this.loadCart();
+
+        // sube el scroll automaticamente :D
+        document.documentElement.scrollTop = 0;
     }
 
     loadCart = () => {
         const cart = JSON.parse(localStorage.getItem('cart'))
         if (cart !== null) {
             let subt = this.getSubtotal(cart.items)
-            this.setState({ items: cart.items, subtotal: subt})
+            this.setState({ items: cart.items, subtotal: subt, loading: false })
         } else {
-            this.setState({ items: [] })
+            this.setState({ items: [], loading: false })
         }
     }
 
@@ -38,8 +42,32 @@ class Cart extends React.Component {
         return total.toFixed(2);
     }
 
+    handleDelete = (index, e) => {
+        this.deleteItem(index);
+        this.loadCart();
+    }
+
+    deleteItem = (index) => {
+        const cart = JSON.parse(localStorage.getItem('cart'))
+        cart.items.splice(index, 1)
+        localStorage.setItem('cart', JSON.stringify(cart))
+    }
+
+    handleChangeCount = (num, total, index) => {
+        console.log("handleChangeCount", num)
+        this.updateSubtotal(num, total, index);
+        this.loadCart();
+    }
+
+    updateSubtotal = (num, total, index) => {
+        const cart = JSON.parse(localStorage.getItem('cart'))
+        cart.items[index].count = num
+        cart.items[index].total = total
+        localStorage.setItem('cart', JSON.stringify(cart))
+    }
+
     render() {
-        const { items, subtotal } = this.state;
+        const { items, subtotal, loading } = this.state;
         console.log("RENDER", items)
         return (
             <Container>
@@ -51,16 +79,17 @@ class Cart extends React.Component {
                     <h1>Carrito de compra</h1>
                 </div>
 
-                <div className="cart-body">
-                    {items.length !== 0
+                <div className={"cart-body " + (items.length !== 0 ? "" : "hide-border")}>
+                    {items.length !== 0 && !loading
                         ? items.map((product, id) => (
-                            <ItemCart data={product} key={id} />
+                            <ItemCart data={product} key={id} id={id} callback={this.handleDelete.bind(this)}
+                                changeCount={this.handleChangeCount.bind(this)} />
                         ))
                         : <EmptyCart />
                     }
                 </div>
 
-                <div className="cart-end">
+                <div className={"cart-end " + (items.length !== 0 ? "" : "hide")}>
                     <div className="cart-subtotal">
                         <h2>Subtotal</h2>
                         <p>${subtotal}</p>

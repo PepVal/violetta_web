@@ -2,6 +2,7 @@
 @import url("categories.css");
 @import url("search.css");
 @import url("products.css");
+@import url("admin.css");
 
 /* importancion especial de css del slideBar */
 /* basicamente se me hacia más facil darle estilo  por un archivo de css que con los styles de javascript */

@@ -46,12 +46,10 @@ class FilterC extends React.Component {
                                     </div>
                                     <select className="custom-select " id="inputGroupSelect02" aria-label="mostrar por categoria">
                                         <option selected>______________</option>
-                                        <h4>
                                         <option value="1">Hombre</option>
                                         <option value="2">Mujer</option>
                                         <option value="3">Niños</option>
                                         <option value="4">Accesorios</option>
-                                        </h4>
                                     </select>
                                 </div>
                             </div>

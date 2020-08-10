@@ -43,7 +43,7 @@ const Footer = (props) => {
                 <div className="line-credit" />
                 <div className="credits">
                     <p>Copyright ©2020 Violetta.</p>
-                    <p>Powered by PepVal Apps</p>
+                    <p>Powered by PepVa Apps</p>
                 </div>
             </div>
         </footer>

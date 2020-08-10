@@ -3,6 +3,7 @@
 @import url("search.css");
 @import url("products.css");
 @import url("admin.css");
+@import url("cart.css");
 
 /* importancion especial de css del slideBar */
 /* basicamente se me hacia más facil darle estilo  por un archivo de css que con los styles de javascript */
@@ -177,7 +178,7 @@ body{
     -ms-flex-direction: column;
     flex-direction: column;
     min-width: 0;
-    background-color: #fff;
+    background-color: #fafafa;
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
 
@@ -192,8 +193,13 @@ body{
     align-items: center;
 }
 .body-collapse input{
+    outline: none;
+    padding: 0 0.4rem;
+    background-color: #f0f0f0;
     width: 100%;
     height: 34px;
+    border-radius: 10px;
+    border: solid #dddddd 1px;
 }
 
 .body-collapse .btn {
@@ -275,7 +281,7 @@ body{
 
 /* footer */
 .footer {
-    margin-top: 163px;
+    margin-top: 100px;
     padding-top: 32px;
     padding-bottom: 32px;
     background-color: #281F58;

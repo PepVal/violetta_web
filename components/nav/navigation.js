@@ -24,7 +24,7 @@ class Navigation extends React.Component {
 
     isLogin(){
         const data = JSON.parse(localStorage.getItem('account'))
-        console.log("data nav ",data)
+        console.log("data profile nav ", data)
         if(data !== null && data.isLogin){
             this.setState({logged: data.isLogin})
         }
@@ -44,7 +44,7 @@ class Navigation extends React.Component {
 
     search(e) {
         e.preventDefault()
-        const item_search = document.getElementById('search').value
+        const item_search = document.getElementById('searchNav').value
         Router.push('/search/[sid]', `/search/${item_search}`)
     }
 
@@ -70,7 +70,7 @@ class Navigation extends React.Component {
                 </div>
                 <ul className="items-group justify-content-center">
                     <li onClick={() => this.handleNav("hombre")}>
-                        <a className={"" + (this.state.category === "hombre" ? 'active' : '')}>HOMBRE</a>
+                        <a className={(this.state.category === "hombre" ? 'active' : '')}>HOMBRE</a>
                     </li>
                     <li onClick={() => this.handleNav("mujer")} >
                         <a className={(this.state.category === "mujer" ? 'active' : '')}>MUJER</a>
@@ -84,7 +84,7 @@ class Navigation extends React.Component {
                 </ul>
                 <div className="input-search">
                     <form onSubmit={(e) => this.search(e)}>
-                        <input id="search" placeholder="Buscar" aria-label="Buscar prenda" />
+                        <input id="searchNav" placeholder="Buscar" aria-label="Buscar prenda" />
                     </form>
                 </div>
                 <div className="nav-icons">

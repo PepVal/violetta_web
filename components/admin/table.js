@@ -1,7 +1,7 @@
 import RowProduct from '../../components/admin/rowProduct'
 const Table = (props) => {
     return (
-        <div className="table-responsive">
+        <div className="table-responsive"style={{marginTop: '20px'}}>
             <table className="table" >
                 <thead alt="cabecera de la tabla">
                     <tr>

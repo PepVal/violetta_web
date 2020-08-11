@@ -1,6 +1,15 @@
+import Router, {useRouter} from 'next/router'
+
 const ProductC = (props) => {
+
+    const handleProductC = (e) => {
+        // sube el scroll automaticamente :D
+        // document.documentElement.scrollTop = 0;
+        Router.push('/products/[pid]', `/products/${props.data.name}`)
+    }
+
     return (
-        <div className="card-product">
+        <div onClick={(e) => handleProductC(e)} className="card-product">
             <div style={{ overflow: "hidden" }}>
                 <img src={props.data.img} alt="Polos" style={{}} />
             </div>

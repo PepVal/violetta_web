@@ -23,7 +23,7 @@
     height: 360px;
     object-fit: cover;
     border-radius: 15px 15px 0px 0px;
-    background: violet;
+    background: #ccc;
     transform: scale(1);
     transition: transform 1.10s;
 }

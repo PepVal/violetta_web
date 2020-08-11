@@ -4,6 +4,7 @@
 @import url("products.css");
 @import url("admin.css");
 @import url("cart.css");
+@import url("checkout.css");
 
 /* importancion especial de css del slideBar */
 /* basicamente se me hacia más facil darle estilo  por un archivo de css que con los styles de javascript */
@@ -219,7 +220,21 @@ body{
     background-color: #281F58;
 }
 
-
+/* Loader css */
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3f4850; 
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin-left: auto;
+    margin-right: auto;
+}  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
 /*********************** HOME PAGE ***********************/
 
@@ -268,7 +283,7 @@ body{
     height: 405px;
     object-fit: cover;
     border-radius: 15px 15px 0px 0px;
-    background: violet;
+    background: #ccc;
 }
 .card-item .name-category p {
     font-family: Roboto, sans-serif;

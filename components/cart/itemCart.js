@@ -3,8 +3,8 @@ const ItemCart = ({ data, id, callback, changeCount }) => {
     console.log("index", id)
 
     const onChangeCount = () => {
-        const value = document.getElementById("countCart"+id).value
-        const total = parseFloat(data.price) * parseInt(document.getElementById("countCart"+id).value, 10)
+        const value = document.getElementById("countCart" + id).value
+        const total = parseFloat(data.price) * parseInt(document.getElementById("countCart" + id).value, 10)
         changeCount(value, total, id)
     }
 
@@ -20,7 +20,7 @@ const ItemCart = ({ data, id, callback, changeCount }) => {
                 <p>Precio: ${data.price}</p>
             </div>
             <div className="cart-count">
-                <input type="number" id={"countCart"+id} placeholder="1" defaultValue={data.count}
+                <input type="number" id={"countCart" + id} placeholder="1" defaultValue={data.count}
                     onChange={onChangeCount}
                     min="1" max="99" aria-valuemax="99" aria-valuemin="1" aria-label="Cantidad de Ropa" />
             </div>

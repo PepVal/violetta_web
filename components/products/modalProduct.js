@@ -4,7 +4,8 @@ const ModalProduct = () => {
 
     const handleContinueBuy = () => {
         // Router.push('/categories/[]')
-        alert("no se que hacer xD")
+        // alert("no se que hacer xD")
+        Router.back()
     }
 
     const handleGoCart = () => {

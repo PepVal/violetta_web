@@ -2,9 +2,11 @@ import Head from 'next/head'
 
 import Container from '../components/Container'
 import Footer from '../components/footer'
+import Loader from '../components/loader'
 
 import EmptyCart from '../components/cart/emptyCart'
 import ItemCart from '../components/cart/itemCart'
+import  Router, {useRouter}  from 'next/router'
 
 class Cart extends React.Component {
 
@@ -66,6 +68,14 @@ class Cart extends React.Component {
         localStorage.setItem('cart', JSON.stringify(cart))
     }
 
+    handleContinueBuy = (e) => {
+        Router.push('/')
+    }
+
+    handleGoCheckout = (e) => {
+        Router.push('/checkout')
+    }
+
     render() {
         const { items, subtotal, loading } = this.state;
         console.log("RENDER", items)
@@ -80,12 +90,14 @@ class Cart extends React.Component {
                 </div>
 
                 <div className={"cart-body " + (items.length !== 0 ? "" : "hide-border")}>
-                    {items.length !== 0 && !loading
+                    {   items.length === 0 && loading 
+                        ? <Loader />
+                        : items.length !== 0 && !loading
                         ? items.map((product, id) => (
                             <ItemCart data={product} key={id} id={id} callback={this.handleDelete.bind(this)}
                                 changeCount={this.handleChangeCount.bind(this)} />
                         ))
-                        : <EmptyCart />
+                        : <EmptyCart /> 
                     }
                 </div>
 
@@ -96,8 +108,8 @@ class Cart extends React.Component {
                     </div>
 
                     <div className="cart-buttons">
-                        <button>Seguir Comprando</button>
-                        <button>Finalizar Compra</button>
+                        <button onClick={(e)=> this.handleContinueBuy(e)}>Seguir Comprando</button>
+                        <button onClick={(e)=> this.handleGoCheckout(e)} >Finalizar Compra</button>
                     </div>
                 </div>
 

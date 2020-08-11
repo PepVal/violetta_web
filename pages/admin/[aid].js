@@ -1,10 +1,11 @@
-import Navbar from '../../components/admin/navbar'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import ButtonAdd from '../../components/admin/button'
-import Table from '../../components/admin/table'
+import ButtonAdd from '../../components/admin/buttonAdmin'
+import TableProduct from '../../components/admin/tableProduct'
 import Error404 from '../../components/categories/Error404'
 import TableClient from '../../components/admin/tableClient'
+import Sales from '../../components/admin/sales'
+import NavbarAdmin from '../../components/admin/navbarAdmin'
 
 const AdminDinamic = (props) => {
     const router = useRouter();
@@ -20,14 +21,14 @@ const AdminDinamic = (props) => {
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossOrigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossOrigin="anonymous"></script>
             </Head>
-            <Navbar/>
+            <NavbarAdmin/>
             <div >
             {   
                 aid === "productos" ? 
                 <div style={{margin: '0 0 20 20'}}>
                      <h2>Listado de Productos</h2>
                     <ButtonAdd/>
-                    <Table/>
+                    <TableProduct/>
                 </div>
                 :
                 aid === "clientes" ?
@@ -37,7 +38,9 @@ const AdminDinamic = (props) => {
                 </div>
                 :
                 aid === "ventas"?
-                <div>Aca tampoco</div>
+                <div>
+                    <Sales/>
+                </div>
                 :
                 <Error404/>
             }

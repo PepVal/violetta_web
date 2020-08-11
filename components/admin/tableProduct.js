@@ -1,5 +1,5 @@
-import RowProduct from '../../components/admin/rowProduct'
-const Table = (props) => {
+import RowProduct from './rowProduct'
+const TableProduct = (props) => {
     return (
         <div className="table-responsive"style={{marginTop: '20px'}}>
             <table className="table" >
@@ -34,4 +34,4 @@ const Table = (props) => {
         </div>
     )
 };
-export default Table;
+export default TableProduct;

@@ -21,7 +21,7 @@ const TableClient = (props) => {
                         name={"Luisa Maria"} filname={"Olaya Aparicio "}correo={"lolaya@gmail.com"} ciudad={"Atacames"} estado={"Activo"}>
                     </RowClient>
                     <RowClient image={"https://i.pinimg.com/564x/0e/7b/d4/0e7bd4e2a3ad316f7edd426063ec779e.jpg"}
-                        name={"Thania Cindy"} filname={"Romero Pacheco "}correo={"lolaya@gmail.com"} ciudad={"Sua"} estado={"Desconectada"}>
+                        name={"Thania Cindy"} filname={"Romero Pacheco "}correo={"cromero@gmail.com"} ciudad={"Sua"} estado={"Desconectada"}>
                     </RowClient>
                 </tbody>
             </table>

@@ -1,6 +1,11 @@
-const Card = (props) =>{
+import Router, { useRouter } from 'next/router'
+const CardAdmin = (props) =>{
+
+    const handleNav=(product)=>{
+        Router.push('/admin/[aid]', `/admin/${product}`)
+    }
     return(
-        <div className="card">
+        <div className="card" onClick={() => handleNav(props.url)} style={{cursor:'pointer'}}>
             <div className="card-header">
                 {props.title}
             </div>
@@ -16,4 +21,4 @@ const Card = (props) =>{
     );
 
 };
-export default Card;
+export default CardAdmin;

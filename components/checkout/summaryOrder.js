@@ -46,7 +46,7 @@ const SummaryOrder = ({data}) => {
             <div className="summary-end">
                 <div className="item-summary-total">
                     <h2 className="bold">Total:</h2>
-                    <p>${total}</p>
+                    <p>${total.toFixed(2)}</p>
                 </div>
             </div>
 

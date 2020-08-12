@@ -8,7 +8,7 @@ import NotFound from '../../components/search/notFound';
 import SearchProduct from '../../components/search/searchProduct'
 import Footer from '../../components/footer'
 
-const Search = ({search}) => {
+const Search = ({ search }) => {
     const router = useRouter();
     const { sid } = router.query;
 
@@ -28,9 +28,9 @@ const Search = ({search}) => {
                 <h1>Buscar</h1>
                 <div className="line" />
             </div>
-            {sid === "pizza"
-            ? <NotFound searchTerm={sid} />
-            : <SearchProduct data={search}/>
+            { sid === "pizza"
+                ? <NotFound searchTerm={sid} />
+                : <SearchProduct data={search} />
             }
             <Footer />
         </Container>
@@ -40,7 +40,7 @@ const Search = ({search}) => {
 Search.getInitialProps = async (ctx) => {
     const data = await dataLocal.search
 
-    return{search: data}
+    return { search: data }
 }
 
 export default Search

@@ -1,7 +1,7 @@
 const Account = () => {
     return(
         <div>
-            soy account
+            soy account dinamic
         </div>
     )
 }

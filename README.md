@@ -2,7 +2,7 @@
 clothes shop with react and next.js (only frontend)
 
 ## Live demo
-[Violetta](https://violetta.vercel.app/)
+ - [Violetta](https://violetta.vercel.app/)
 
 ## Developers
  - José Ochoa

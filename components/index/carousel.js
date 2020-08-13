@@ -9,15 +9,15 @@ const Carousel = () => {
             </ol>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img src="/img/carousel_1.svg" 
+                    <img src="https://cdn.pixabay.com/photo/2015/10/12/15/18/store-984393_960_720.jpg" 
                     className="d-block w-100 img-carousel" alt="Producto destacado" />
                 </div>
                 <div className="carousel-item">
-                    <img src="/img/carousel_2.svg"
+                    <img src="https://cdn.pixabay.com/photo/2015/03/26/10/07/young-690958_960_720.jpg"
                     className="d-block w-100 img-carousel" alt="Producto destacado" />
                 </div>
                 <div className="carousel-item">
-                    <img src="/img/carousel_3.svg" 
+                    <img src="https://cdn.pixabay.com/photo/2017/08/01/11/48/blue-2564660_960_720.jpg" 
                     className="d-block w-100 img-carousel" alt="Producto destacado" />
                 </div>
             </div>

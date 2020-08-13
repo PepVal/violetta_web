@@ -155,7 +155,7 @@ class Login extends React.Component {
         localStorage.setItem('account', user)
         console.log("isADMIN? ", isAdmin)
         if (isAdmin) {
-            Router.push("/admin")
+            Router.push("/")//hay que cambiar esto xd
         } else {
             Router.push("/")
         }

@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-import fetch from 'isomorphic-fetch'
+// datos locales en un archivo json, si todo esta en un json xD
+import dataLocal from '../../public/api/db.json'
 
 import Container from '../../components/Container'
 import Footer from '../../components/footer'
@@ -28,8 +29,9 @@ const Categories = (props) => {
             </Head>
 
             <div className="product-container">
-                {/*<h1>Soy Categories {id}</h1>*/}
+
                 <FilterC />
+                
                 <ul className="custom-row justify-content-center">
                     {id === "hombre" ?
                         props.category.hombre.map((product, id) => (<ProductC key={id} data={product} />))
@@ -51,10 +53,9 @@ const Categories = (props) => {
         </Container>
     )
 }
-Categories.getInitialProps = async (ctx) => {
-    const res = await fetch('https://my-json-server.typicode.com/PepVal/fake-server/category')
-    const data = await res.json()
 
+Categories.getInitialProps = async (ctx) => {
+    const data = await dataLocal.category
     return { category: data }
 }
 

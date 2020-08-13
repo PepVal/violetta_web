@@ -10,7 +10,8 @@ class Navigation extends React.Component {
         super(props)
         this.state = {
             logged: false,
-            category: null
+            category: null,
+            emptyCart: true
         }
     }
 
@@ -20,13 +21,27 @@ class Navigation extends React.Component {
         //     this.setState({category: this.props.id})
         // }
         this.isLogin()
+        this.emptyCart()
     }
 
-    isLogin(){
+    emptyCart = () => {
+        const cart = JSON.parse(localStorage.getItem('cart'))
+        if (cart !== null) {
+            if (cart.items.length !== 0) {
+                this.setState({ emptyCart: false })
+            } else {
+                this.setState({ emptyCart: true })
+            }
+        } else {
+            this.setState({ emptyCart: true })
+        }
+    }
+
+    isLogin() {
         const data = JSON.parse(localStorage.getItem('account'))
         console.log("data profile nav ", data)
-        if(data !== null && data.isLogin){
-            this.setState({logged: data.isLogin})
+        if (data !== null && data.isLogin) {
+            this.setState({ logged: data.isLogin })
         }
     }
 
@@ -48,7 +63,7 @@ class Navigation extends React.Component {
         Router.push('/search/[sid]', `/search/${item_search}`)
     }
 
-    searchCollapse(e){
+    searchCollapse(e) {
         e.preventDefault()
         const item_search = document.getElementById('iSearchCollapse').value
         Router.push('/search/[sid]', `/search/${item_search}`)
@@ -97,12 +112,13 @@ class Navigation extends React.Component {
                         <Link href="/cart">
                             <img src="/cart.svg" alt="Carrito" />
                         </Link>
+                        <div id="point-cart" className={this.state.emptyCart ? "" : "point"} />
                     </div>
 
                     <div className="login-icon">
                         {this.state.logged
-                        ?   <ProfileOptions />
-                        :   <Link href="/login">
+                            ? <ProfileOptions />
+                            : <Link href="/login">
                                 <img src="/user.svg" alt="Perfil" />
                             </Link>
                         }

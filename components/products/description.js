@@ -24,7 +24,7 @@ class Description extends React.Component {
         e.preventDefault();
 
         const img = this.props.img
-        const name = this.props.name 
+        const name = this.props.name
         const size = this.state.isChecked
 
         // Datos parceados por probar
@@ -42,7 +42,13 @@ class Description extends React.Component {
 
         const cart = JSON.parse(localStorage.getItem('cart'))
 
+        let element = document.getElementById("point-cart")
+
         if (cart !== null) { //SI NO es nulo quiere decir que ya existen datos previos
+
+            if (cart.items.length === 0) {
+                element.classList.add("point");
+            }
 
             cart.items.push(item);
 
@@ -50,12 +56,14 @@ class Description extends React.Component {
 
         } else { //SI ES null quiere decir que no existe ese localstorage
 
+            element.classList.add("point");
+
             let items = []
 
-            let arrayItems = {items}
+            let arrayItems = { items }
 
             arrayItems.items.push(item)
-            
+
             localStorage.setItem('cart', JSON.stringify(arrayItems))
         }
     }
@@ -71,7 +79,7 @@ class Description extends React.Component {
                     <div className="count-input">
                         <p className="bold">Cantidad: </p>
                         <input type="number" id="count" placeholder="1" defaultValue="1"
-                            min="1" max="99" aria-valuemax="99" aria-valuemin="1" aria-label="Cantidad de Ropa" />
+                            min="1" max="49" aria-valuemax="49" aria-valuemin="1" aria-label="Cantidad de Ropa" />
                     </div>
                     <p className="bold">Precio: ${price}</p>
                 </div>

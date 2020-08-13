@@ -12,9 +12,17 @@ const ProfileOptions = (props) => {
         const user = JSON.stringify(data)
 
         console.log(user)
-        
+
         localStorage.setItem('account', user)
         Router.reload();
+    }
+
+    const handleProfile = (e) => {
+        Router.push("/account")
+    }
+
+    const handleHistory = (e, id) => {
+        Router.push("/account/[acid]", `/account/${id}`)
     }
 
     return (
@@ -24,8 +32,8 @@ const ProfileOptions = (props) => {
                 src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg" alt="Imagen de perfil" />
 
             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a className="dropdown-item" href="#">Historial</a>
-                <a className="dropdown-item" href="#">Another action</a>
+                <p onClick={(e) => handleProfile(e)} className="dropdown-item" >Perfil</p>
+                <p onClick={(e) => handleHistory(e, "history")} className="dropdown-item"  >Historial</p>
                 <div className="dropdown-divider" />
                 <a onClick={logout} className="dropdown-item" href="">Cerrar sesión</a>
             </div>

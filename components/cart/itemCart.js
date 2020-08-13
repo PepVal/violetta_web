@@ -1,13 +1,12 @@
 const ItemCart = ({ data, id, callback, changeCount }) => {
 
-    console.log("index", id)
-
     const onChangeCount = () => {
         const value = document.getElementById("countCart" + id).value
-        const total = parseFloat(data.price) * parseInt(document.getElementById("countCart" + id).value, 10)
-        changeCount(value, total, id)
+        if (value !== "" && value > 0) {
+            const total = parseFloat(data.price) * parseInt(document.getElementById("countCart" + id).value, 10)
+            changeCount(value, total, id)
+        }
     }
-
 
     return (
         <div className="cart-item">
@@ -22,7 +21,7 @@ const ItemCart = ({ data, id, callback, changeCount }) => {
             <div className="cart-count">
                 <input type="number" id={"countCart" + id} placeholder="1" defaultValue={data.count}
                     onChange={onChangeCount}
-                    min="1" max="99" aria-valuemax="99" aria-valuemin="1" aria-label="Cantidad de Ropa" />
+                    min="1" max="49" aria-valuemax="49" aria-valuemin="1" aria-label="Cantidad de articulo" />
             </div>
             <div className="cart-total">
                 <p>Total: ${data.total.toFixed(2)}</p>

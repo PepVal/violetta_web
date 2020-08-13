@@ -49,6 +49,18 @@ class SlideBar extends React.Component {
     this.setState(state => ({ menuOpen: !state.menuOpen }))
   }
 
+  logout() {
+    const data = JSON.parse(localStorage.getItem('account'))
+    data.isLogin = false;
+
+    const user = JSON.stringify(data)
+
+    console.log(user)
+
+    localStorage.setItem('account', user)
+    Router.reload();
+  }
+
   render() {
     return (
       <Menu isOpen={this.state.menuOpen}
@@ -61,8 +73,19 @@ class SlideBar extends React.Component {
 
 
         {this.state.logged
-          ? <div>Mi cuenta</div>
-          : <Link href="/login">
+          ?
+          <div>
+            <div>
+              <Link href="/account">
+                <h3 className="menu-item">Mi cuenta</h3>
+              </Link>
+            </div>
+            <div>
+              <h3 onClick={(e) => this.logout()} className="menu-item">Cerrar sesión</h3>
+            </div>
+          </div>
+          :
+          <Link href="/login">
             <h3 className="menu-item" >Iniciar Sesión</h3>
           </Link>
         }

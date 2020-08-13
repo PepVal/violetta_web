@@ -5,6 +5,7 @@
 @import url("admin.css");
 @import url("cart.css");
 @import url("checkout.css");
+@import url("account.css");
 
 /* importancion especial de css del slideBar */
 /* basicamente se me hacia más facil darle estilo  por un archivo de css que con los styles de javascript */
@@ -157,6 +158,18 @@ body{
 }
 .toogle-icon {
     display: none;
+}
+.cart-icon {
+    position: relative;
+}
+.cart-icon .point{
+    position: absolute;
+    border-radius: 100px;
+    height: 13px;
+    width: 13px;
+    right: 4px;
+    top: 0px;
+    background-color: tomato;
 }
 
 /* margin top body */
@@ -364,6 +377,66 @@ body{
     margin: 0;
     font-size: 12px;
     font-family: Roboto, sans-serif;
+}
+.dropdown-menu p{
+    cursor: pointer;
+}
+/* defaultPage */
+.default-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    font-family: Roboto, sans-serif;
+    background-image: url('data:image/svg+xml,%3Csvg width="52" height="26" viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.05"%3E%3Cpath d="M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+    background-size: 150px;
+    background-repeat: repeat;
+    background-position: center;
+    background-color: #fafafa;
+}
+.default-page img {
+    border-style: none;
+    vertical-align: middle;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 16px;
+    margin-bottom: 32px;
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25);
+}
+.default-page h1 {
+    margin-top: 32;
+    font-size: 24px;
+    max-width: 600px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.default-page h4 {
+    font-size: 18px;
+    max-width: 540px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.default-page button {
+    height: 46px;
+    width: 200px;
+    background-color: #514597;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    /* margin-top: 10px; */
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px;
+    margin: 0px 4px;
+}
+.default-page button:hover {
+    background-color: #281F58;
 }
 
 /* BREAKPOINT FOR RESPONSIVE */

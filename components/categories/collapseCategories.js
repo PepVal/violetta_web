@@ -18,7 +18,7 @@ class FilterC extends React.Component {
                     <div className="colapsso custom-row" id="headingOne">
                         <svg viewBox="0 0 24 24" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onClick={() => this.changeState()}
                             style={{ fill: this.state.isOpen ? "#9B51E0" : "#000" }}>
-                            <path d="M21 8H3V6H21V8M13.81 16H10V18H13.09C13.21 17.28 13.46 16.61 13.81 16M18 11H6V13H18V11M18 15V18H15V20H18V23H20V20H23V18H20V15H18Z"></path>
+                            <path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"></path>
                         </svg>
                         <p className="font-weight-bold " data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onClick={() => this.changeState()}
                             style={{ color: this.state.isOpen ? "#9B51E0" : "#000" }}

@@ -29,6 +29,10 @@ class Cart extends React.Component {
     loadCart = () => {
         const cart = JSON.parse(localStorage.getItem('cart'))
         if (cart !== null) {
+            if (cart.items.length === 0) {
+                let element = document.getElementById("point-cart")
+                element.classList.remove("point");
+            }
             let subt = this.getSubtotal(cart.items)
             this.setState({ items: cart.items, subtotal: subt, loading: false })
         } else {

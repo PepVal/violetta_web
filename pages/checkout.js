@@ -40,6 +40,7 @@ class Checkout extends React.Component {
                 <Head>
                     <title>Checkout</title>
                 </Head>
+
                 { isLogin && items.length === 0
                     ? <NotProducts />
                     : isLogin && items.length !== 0
@@ -51,6 +52,7 @@ class Checkout extends React.Component {
                 }
 
                 <Footer />
+                
             </Container>
         )
     }

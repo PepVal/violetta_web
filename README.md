@@ -1,5 +1,5 @@
 # violetta_web
-clothes shop with react and next.js (only frontend)
+Clothes shop with react.js and next.js (only frontend)
 
 ## Live demo
  - [Violetta](https://violetta.vercel.app/)
@@ -27,7 +27,7 @@ Se debe ejecutar este comando en el directorio raiz del proyecto al mismo nivel 
 `npm install`
 
 #### Run from the root directory.
-Este comando ejecutara un servidor de desarrollo de forma local, el cual se ejecutara en localhost:3000\
+Este comando creara un servidor de desarrollo de forma local, el cual se ejecutara en localhost:3000\
 `npm run dev`
 
 ## Released
